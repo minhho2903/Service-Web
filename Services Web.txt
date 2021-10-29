@@ -1,0 +1,34 @@
+1 Netflix
+2 Youtube
+3 Disney+
+4 Spotify
+---------------------
+1 admin
+2 nhân viên
+3 seller
+4 khách
+---------------------
+Form đăng ký
+usename
+password
+re-password
+full name
+email
+---------------------
+Form đăng nhập
+usename
+password
+button "Đăng nhập"
+---------------------
+khách
+thông tin khách hàng
+đăng xuất
+
+seller
+thông tin khách hàng
+
+----------------------------
+deadline T5 (28/10)
+Trang chủ (đăng ký, đăng nhập)
+Trang nhận tài khoản
+

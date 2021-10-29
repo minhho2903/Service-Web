@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <title>Trang chủ</title>
+</head>
+<body>
+    <div class="main">
+        <!-- Header -->
+        <div id="header">
+            <div class="grid">
+                <div class="hd__nav">
+                    <ul class="hd__nav-list">
+                        <li class="hd__nav-item">
+                            <a href="#" class="hd__nav-item-link">
+                                <ion-icon name="diamond-sharp"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="hd__nav-item"><a href="#">Trang chủ</a></li>
+                        <li class="hd__nav-item"><a href="./get-account.html" target="_blank">Nhận tài khoản</a></li>
+                        <li class="hd__nav-item"><a href="#">Gói dịch vụ</a></li>
+                        <li class="hd__nav-item js-support"><a href="#">Hỗ trợ</a></li>
+                    </ul>
+                    <ul class="hd__nav-list">
+                        <li class="hd__nav-item none">
+                            <a href="#" class="hd__nav-item-link">
+                                <ion-icon name="diamond-sharp"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="hd__nav-item bold-6 js-signup "><a href="./SignUp.html" target="_blank">Đăng ký</a></li>
+                        <li class="hd__nav-item bold-6 js-signin "><a href="./SignIn.html" target="_blank">Đăng nhập</a></li>
+                        <li class="account none">
+                            <a class="flex-center" href="#">
+                                Minh
+                                <ion-icon class="profile-icon" name="person-circle-outline"></ion-icon>
+                            </a>
+                            <ul class="subnav">
+                                <li><a href="#">Thông tin chi tiết</a></li>
+                                <li><a href="#">Trang quản lý</a></li>
+                                <li><a href="#">Nạp tiền</a></li>
+                                <li><a href="#">Đăng xuất</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Slider -->
+        <div id="slider">
+            <div class="row">
+                <div class="col-1 px-0"> 
+                </div>
+                <div class="col-10 px-0">
+                    <div id="demo" class="carousel slide" data-ride="carousel" data-interval="2000">
+        
+                        <!-- Indicators -->
+                        <ul class="carousel-indicators">
+                            <li data-target="#demo" data-slide-to="0" class="active"></li>
+                            <li data-target="#demo" data-slide-to="1"></li>
+                            <li data-target="#demo" data-slide-to="2"></li>
+                        </ul>
+        
+                        <!-- The slideshow -->
+                        <div class="carousel-inner border-slide">
+                            <div class="carousel-item active">
+                                <img src="./assets/img/DP.jpg" width="100%" alt="img1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./assets/img/MoneyHeist.jpg" width="100%" alt="img2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./assets/img/SAS.jpg" width="100%" alt="img3">
+                            </div>
+                        </div>
+        
+                        <!-- Left and right controls -->
+                        <a id="control" class="carousel-control-prev left-icon" href="#demo" data-slide="prev">
+                            <!-- <span class="carousel-control-prev-icon"></span> -->
+                            <ion-icon class="icon-slide" name="chevron-back-outline"></ion-icon>
+                        </a>
+                        <a id="control" class="carousel-control-next right-icon" href="#demo" data-slide="next">
+                            <!-- <span class="carousel-control-next-icon"></span>  -->
+                            <ion-icon class="icon-slide" name="chevron-forward-outline"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-1 px-0"> 
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div id="footer">
+            <div class="social-list">
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            </div>
+            <p class="copyright">Web được phát triển bởi Hồ Đức Thế Minh và Vũ Đình Tuân</p>
+        </div>
+        <!-- Modal Hỗ trợ -->
+        <!-- modaSP: dành cho moda Support (hỗ trợ) -->
+        <div class="modaSP js-modaSP">
+            <div class="modaSP-container js-modaSP-container">
+                <div class="modaSP-page">
+                    <div class="modaSP-page-hd bold-6">
+                        Thông tin Page
+                    </div>
+                    <div class="modaSP-page-body">
+                        <div class="QrCode">
+                            <img src="./assets/img/QR_Code.png" alt="Qr_Code">
+                        </div>
+                        <p class="modaSP-or">hoặc</p>
+                        <a href="https://www.facebook.com/kmphimgiare.support" target="_blank">
+                            <button class="modaSP-clickhere-page bold-7">Bấm vào đây</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="modaSP-contact">
+                    <div class="modaSP-contact-hd bold-6">
+                        Thông tin liên lạc
+                    </div>
+                    <div class="modaSP-contact-body">
+                        <div class="modaSP-contact-phone">
+                            <p class="phone-inf bold-5">Thông tin Admin</p>
+                            <p class="phone-inf bold-5">Hồ Đức Thế Minh</p>
+                            <p class="phone-inf bold-5">Chuyên viên tư vấn</p>
+                            <p class="phone-inf bold-5">Số điện thoại</p>
+                            <div class="phone-ad">
+                                <i class="phone-icon ti-headphone-alt"></i>
+                                <a href="tel:+0797771074">0797771074</a>
+                            </div>
+                        </div>
+                        <div class="modaSP-contact-mail">
+                            <div class="mail-info">
+                                <i class="mail-icon ti-email"></i>
+                                <p class="mail-ct">Mail góp ý</p>
+                            </div>
+                            <a href="mailto:hoductheminh339@gmail.com" target="_blank">
+                                <button class="modaSP-clickhere-contact bold-7">Bấm vào đây</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./assets/js/modaSP.js"></script>
+
+        <!-- Modal Đăng ký -->
+        <!-- modaSU: dành cho moda Sign up (đăng ký) -->
+        <!-- <div class="modaSU js-modaSU">
+            <div class="moda-container js-modaSU-container">
+                <div class="moda__close js-modaSU-close">
+                    <ion-icon name="close-outline"></ion-icon>
+                </div>
+                <div class="moda__hd bold-6">
+                    <i class="moda__hd-icon ti-user"></i>
+                    Thông tin đăng ký
+                </div>
+                <div class="moda__body">
+                    <div class="moda-input-field">
+                        <input type="text" name="usernameSU" required class="moda-input" id="usernameSU" placeholder=" ">
+                        <label for="usernameSU" class="input-effect">Username</label>
+                    </div>
+                    <div class="moda-input-field">
+                        <input type="password" name="passwordSU" required class="moda-input" id="passwordSU" placeholder=" ">
+                        <label for="passwordSU" class="input-effect">Password</label>
+                    </div>
+                    <div class="moda-input-field">
+                        <input type="password" name="re-passwordSU" required class="moda-input" id="re-passwordSU" placeholder=" ">
+                        <label for="re-passwordSU" class="input-effect">Re-password</label>
+                    </div>
+                    <div class="moda-input-field">
+                        <input type="text" name="fullnameSU" required class="moda-input" id="fullnameSU" placeholder=" ">
+                        <label for="fullnameSU" class="input-effect">Fullname</label>
+                    </div>
+                    <div class="moda-input-field">
+                        <input type="email" name="emailSU" required class="moda-input" id="emailSU" placeholder=" ">
+                        <label for="emailSU" class="input-effect">Email</label>
+                    </div>
+                    <button class="moda-sign">
+                        Đăng ký
+                    </button>
+                </div>
+            </div>
+        </div> -->
+        <!-- <script src="./assets/js/modaSU.js"></script> -->
+        
+        <!-- Modal Đăng nhập -->
+        <!-- modaSI: dành cho moda Sign in (đăng nhập) -->
+        <!-- <div class="modaSI js-modaSI">
+            <div class="moda-container js-modaSI-container">
+                <div class="moda__close js-modaSI-close">
+                    <ion-icon name="close-outline"></ion-icon>
+                </div>
+                <div class="moda__hd bold-6">
+                    <i class="moda__hd-icon ti-user"></i>
+                    Thông tin đăng nhập
+                </div>
+                <div class="moda__body">
+                    <div class="moda-input-field">
+                        <input type="text" name="username" required class="moda-input" id="username" placeholder=" ">
+                        <label for="username" class="input-effect">Username</label>
+                    </div>
+                    <div class="moda-input-field">
+                        <input type="password" name="password" required class="moda-input" id="password" placeholder=" ">
+                        <label for="password" class="input-effect">Password</label>
+                    </div>
+                    <button class="moda-sign">
+                        Đăng nhập
+                    </button>
+                </div>
+            </div>
+        </div> -->
+        <!-- <script src="./assets/js/modaSI.js"></script> -->
+    </div>
+</body>
+</html>
+
