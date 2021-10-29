@@ -105,6 +105,7 @@ html {
 }
 
 .modaSP-clickhere-page:hover {
+    cursor: pointer;
     opacity: 0.8;
 }
 
@@ -197,6 +198,7 @@ html {
 }
 
 .modaSP-clickhere-contact:hover {
+    cursor: pointer;
     opacity: 0.8;
 }
 
