@@ -1,12 +1,10 @@
 1 Netflix
 2 Youtube
 3 Disney+
-4 Spotify
 ---------------------
 1 admin
 2 nhân viên
-3 seller
-4 khách
+3 khách
 ---------------------
 Form đăng ký
 usename
@@ -31,4 +29,10 @@ thông tin khách hàng
 deadline T5 (28/10)
 Trang chủ (đăng ký, đăng nhập)
 Trang nhận tài khoản
+----------------------------
+Header admin bao gồm:
+1. Trang chủ
+2. Get token
+3. Manage (User, Token, Account, Lists)
 
+Thông tin chi tiết trong subnav làm modal
