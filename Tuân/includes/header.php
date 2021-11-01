@@ -32,8 +32,11 @@
                                     </a>
                                     <ul class="subnav">
                                         <li class="js-details"><a href="#">Thông tin chi tiết</a></li>
-                                        <li><a href="#">Trang quản lý</a></li>
+                                        <?php if ($_SESSION['role'] >= 1) { ?>
+                                        <li><a href="./admin/index.php">Trang quản lý</a></li>
+                                        <?php } else {?>
                                         <li><a href="#">Nạp tiền</a></li>
+                                        <?php }?>
                                         <li><a href="logout.php">Đăng xuất</a></li>
                                     </ul>
                                 </li>
