@@ -11,7 +11,7 @@
         
         <?php include('modal-support.php') ?>
 
-        <?php include('modal-get-account.php') ?>
+        <?php include('modal-info.php') ?>
 
     </div>
 </body>

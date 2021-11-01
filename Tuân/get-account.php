@@ -88,4 +88,6 @@
             </div>
         </div>
 
+        <?php include('./includes/modal-get-account.php') ?>
+
 <?php include('includes/footer.php') ?>
