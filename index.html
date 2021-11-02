@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./Minh/assets/css/main.css">
     <link rel="stylesheet" href="./Minh/assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -73,6 +74,12 @@
                                     <ion-icon name="diamond-sharp"></ion-icon>
                                 </a>
                             </li>
+                            <li class="account coin-hd">
+                                <a class="flex-center money js-recharge" href="#">
+                                    100
+                                    <i class="money-icon fa fa-coins" style="color:#f7da40;"></i>
+                                </a>
+                            </li>
                             <li class="account">
                                 <a class="flex-center" href="#">
                                     Anh Minh
@@ -81,7 +88,7 @@
                                 <ul class="subnav">
                                     <li class="js-details"><a href="#">Thông tin chi tiết</a></li>
                                     <li><a href="#">Trang quản lý</a></li>
-                                    <li><a href="#">Nạp tiền</a></li>
+                                    <li class="js-recharge"><a href="#">Nạp tiền</a></li>
                                     <li><a href="#">Đăng xuất</a></li>
                                 </ul>
                             </li>
@@ -143,6 +150,36 @@
             </div>
             <p class="copyright">Web được phát triển bởi Hồ Đức Thế Minh và Vũ Đình Tuân</p>
         </div>
+
+        <!-- Modal Nạp tiền -->
+        <!-- modaRC:  dành cho moda Recharge (nạp tiền)-->
+        <div class="modaRC js-modaRC">
+            <div class="modaRC-container js-modaRC-container">
+                <div class="modaRC__close js-modaRC-close">
+                    <ion-icon name="close-outline"></ion-icon>
+                </div>
+                <div class="modaRC__hd bold-6">
+                    Thông tin số dư cá nhân
+                </div>
+                <div class="modaRC__body bold-5">
+                    <div class="flex-center modaRC__body-id">
+                        <div class="modaRC__body-left">Số tiền hiện có: </div>
+                        <div class="modaRC__body-right">
+                            100
+                            <i class="money-icon fa fa-coins" style="color:#f7da40;"></i>
+                        </div>
+                    </div>
+                    <div class="flex-center modaRC__body-username">
+                        <div class="modaRC__body-left">Bạn muốn nạp thêm: </div>
+                        <input type="number" min="100" max="1000" name="recharge" id="" class="modaRC__body-right" placeholder="min = 100 max = 1000">
+                    </div>
+                    <button class="RC-confirm bold-6">
+                        Xác Nhận
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script src="./Minh/assets/js/modaRC.js"></script>
 
         <!-- Modal Hỗ trợ -->
         <!-- modaSP: dành cho moda Support (hỗ trợ) -->

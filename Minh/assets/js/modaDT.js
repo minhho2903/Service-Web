@@ -17,7 +17,6 @@ function hideForm() {
 // Nghe hành vi click của "Thông tin chi tiết"
 details.addEventListener('click', showForm)
 
-
 // Nghe hành vi click vào button close
 modaCloseDT.addEventListener('click', hideForm)
 
