@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/modaSP_GA-fixed.css">
+    <link rel="stylesheet" href="./assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <title>Quản lý token</title>
+</head>
+<body>
+    <div class="main">
+        <!-- Header -->
+        <div id="header">
+            <div class="grid wide">
+                <div class="hd__nav">
+                    <!-- Sau khi Sign in -->
+                    <div class="header-admin">
+                        <ul class="hd__nav-list">
+                            <li class="hd__nav-item">
+                                <a href="#" class="hd__nav-item-link">
+                                    <ion-icon name="diamond-sharp"></ion-icon>
+                                </a>
+                            </li>
+                            <li class="hd__nav-item"><a href="../index.html" target="_blank">Trang chủ</a></li>
+                            <li class="hd__nav-item"><a href="#" target="_blank">Get Token</a></li>
+                            <li class="hd__nav-item account">
+                                <a href="#">
+                                    Quản lý
+                                </a>
+                                <ul class="subnav-admin">
+                                    <li><a href="./manage_user.html">Người dùng</a></li>
+                                    <li><a href="./manage_token.html">Token</a></li>
+                                    <li><a href="./manage_account.html">Tài khoản</a></li>
+                                    <li><a href="#">Danh sách</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+    
+                        <ul class="hd__nav-list">
+                            <li class="hd__nav-item none">
+                                <a href="#" class="hd__nav-item-link">
+                                    <ion-icon name="diamond-sharp"></ion-icon>
+                                </a>
+                            </li>
+                            <li class="account coin-hd">
+                                <a class="flex-center money js-recharge" href="#">
+                                    100
+                                    <i class="money-icon fa fa-coins" style="color:#f7da40;"></i>
+                                </a>
+                            </li>
+                            <li class="account">
+                                <a class="flex-center" href="#">
+                                    Anh Minh
+                                    <ion-icon class="profile-icon" name="person-circle-outline"></ion-icon>
+                                </a>
+                                <ul class="subnav">
+                                    <li class="js-details"><a href="#">Thông tin chi tiết</a></li>
+                                    <li><a href="#">Trang quản lý</a></li>
+                                    <li class="js-recharge"><a href="#">Nạp tiền</a></li>
+                                    <li><a href="#">Đăng xuất</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div id="content">
+            <div class="flex-center">
+                <div class="get-token-container">
+                    <div class="get-token-hd bold-7">
+                        GET TOKEN
+                    </div>
+                    <div class="get-token-body">
+                        <select name="" id="" class="get-token-mon">
+                            <option value="1m">1 Tháng</option>
+                            <option value="3m">3 Tháng</option>
+                            <option value="6m">6 Tháng</option>
+                            <option value="12m">12 Tháng</option>
+                        </select>
+                        <div class="get-token-sv">
+                            <div class="get-token-left">
+                                Service:
+                            </div>
+                            <div class="get-token-mid">
+                                <input type="radio" name="service" required id="Netflix" value="Netflix" checked>
+                                <label class="input-opt-label bold-5 mr-10" for="Netflix">Netflix</label>
+                            </div>
+                            <div class="get-token-right">
+                                <input type="radio" name="service" required id="Disney+" value="Disney+">
+                                <label class="input-opt-label bold-5" for="Disney+">Disney+</label>
+                            </div>
+                        </div>
+                        <div class="get-token-type">
+                            <div class="get-token-left">
+                                Type:
+                            </div>
+                            <div class="get-token-mid">
+                                <input type="radio" name="type" required id="HD" value="HD" checked>
+                                <label class="input-opt-label bold-5" for="HD">HD</label>
+                            </div>
+                            <div class="get-token-right">
+                                <input type="radio" name="type" required id="4K" value="4K">
+                                <label class="input-opt-label bold-5" for="4K">4K</label>
+                            </div>
+                        </div>
+                        <div class="btn-get-token">
+                            <button class="btn-get bold-6">GET</button>
+                        </div>
+                        <input type="text" name="" id="" value="65Kh1uasj4" class="token-output bold-6">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer">
+            <div class="social-list">
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            </div>
+            <p class="copyright">Web được phát triển bởi Hồ Đức Thế Minh và Vũ Đình Tuân</p>
+        </div>
+    </div>
+
+    <!-- Modal edit page manage-token -->
+    <!-- modaET:  dành cho moda Edit Token -->
+    <div class="modaET js-modaET">
+        <div class="modaET-container js-modaET-container">
+            <div class="modaET__close js-modaET-close">
+                <ion-icon name="close-outline"></ion-icon>
+            </div>
+            <div class="modaET__hd bold-6">
+                Chỉnh sửa Token
+            </div>
+            <div class="modaET__body bold-5">
+                <div class="flex-center modaET__body-username">
+                    <div class="modaET__body-left">ID: </div>
+                    <div class="modaET__body-right">1</div>
+                </div>
+                <div class="flex-center modaET__body-username">
+                    <div class="modaET__body-left">Token: </div>
+                    <div class="modaET__body-right">m9agaAQjjT</div>
+                </div>
+                <div class="flex-center modaET__body-username">
+                    <div class="modaET__body-left">Type: </div>
+                    <select name="ET-type" class="modaET__body-right p-5">
+                        <option value="HD">HD</option>
+                        <option value="4K">4K</option>
+                    </select>
+                </div>
+                <div class="flex-center modaET__body-username">
+                    <div class="modaET__body-left">Service: </div>
+                    <select name="ET-service" class="modaET__body-right p-5">
+                        <option value="Netflix">Netflix</option>
+                        <option value="Disney+">Disney+</option>
+                    </select>
+                </div>
+                <div class="flex-center modaET__body-username">
+                    <div class="modaET__body-left">Time: </div>
+                    <select name="ET-time" class="modaET__body-right p-5">
+                        <option value="1m">1 tháng</option>
+                        <option value="3m">3 tháng</option>
+                        <option value="6m">6 tháng</option>
+                        <option value="12m">12 tháng</option>
+                    </select>
+                </div>
+                <div class="flex-center modaET__body-username">
+                    <div class="modaET__body-left">Data Get: </div>
+                    <input type="datetime-local" name="ET-dataget" class="modaET__body-right p-5">
+                </div>
+                <button class="ET-confirm bold-6">
+                    Cập nhật
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/modaET.js"></script>
+
+    <!-- Modal Nạp tiền -->
+    <!-- modaRC:  dành cho moda Recharge (nạp tiền)-->
+    <div class="modaRC js-modaRC">
+        <div class="modaRC-container js-modaRC-container">
+            <div class="modaRC__close js-modaRC-close">
+                <ion-icon name="close-outline"></ion-icon>
+            </div>
+            <div class="modaRC__hd bold-6">
+                Thông tin số dư cá nhân
+            </div>
+            <div class="modaRC__body bold-5">
+                <div class="flex-center modaRC__body-id">
+                    <div class="modaRC__body-left">Số tiền hiện có: </div>
+                    <div class="modaRC__body-right">100
+                        <i class="money-icon fa fa-coins" style="color:#f7da40;"></i>
+                    </div>
+                </div>
+                <div class="flex-center modaRC__body-username">
+                    <div class="modaRC__body-left">Bạn muốn nạp thêm: </div>
+                    <input type="number" min="100" max="1000" name="recharge" id="" class="modaRC__body-right p-5" placeholder="min = 100 max = 1000">
+                </div>
+                <button class="RC-confirm bold-6">
+                    Xác Nhận
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/modaRC.js"></script>
+
+    <!-- Modal Thông tin chi tiết -->
+    <!-- modaDT: dành cho moda Details (thông tin chi tiết) -->
+    <div class="modaDT js-modaDT">
+        <div class="modaDT-container js-modaDT-container">
+            <div class="modaDT__close js-modaDT-close">
+                <ion-icon name="close-outline"></ion-icon>
+            </div>
+            <div class="modaDT__hd bold-6">
+                Thông tin chi tiết
+            </div>
+            <div class="modaDT__body bold-5">
+                <div class="flex-center modaDT__body-id">
+                    <div class="modaDT__body-left">ID</div>
+                    <div class="modaDT__body-right">1</div>
+                </div>
+                <div class="flex-center modaDT__body-username">
+                    <div class="modaDT__body-left">Username</div>
+                    <div class="modaDT__body-right">Minh</div>
+                </div>
+                <div class="flex-center modaDT__body-fullname">
+                    <div class="modaDT__body-left">Fullname</div>
+                    <div class="modaDT__body-right">Hồ Đức Thế Minh</div>
+                </div>
+                <div class="flex-center modaDT__body-mail">
+                    <div class="modaDT__body-left">Mail</div>
+                    <div class="modaDT__body-right">hoductheminh339@gmail.com</div>
+                </div>
+                <div class="flex-center modaDT__body-role">
+                    <div class="modaDT__body-left">Role</div>
+                    <div class="modaDT__body-right">Admin</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/modaDT.js"></script>
+</body>
+</html>

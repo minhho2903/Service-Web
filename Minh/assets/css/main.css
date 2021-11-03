@@ -16,7 +16,7 @@ html {
 }
 
 .p-5 {
-    padding: 5px;
+    padding: 5px !important;
 }
 
 .pt-10 {
@@ -43,6 +43,10 @@ html {
     margin-top: 75px !important;
 }
 
+.mr-10 {
+    margin-right: 10px !important;
+}
+
 .bold-5 {
     font-weight: 500 !important;
 }
@@ -63,6 +67,28 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.color-red, .Netflix {
+    color: #dd2606 !important;
+}
+
+.color-blue, .Disney {
+    color: #0078e7 !important;
+}
+
+.color-orange {
+    color: #F0A500 !important;
+}
+
+.color-block {
+    background-color: #F0A500 !important;
 }
 
 /* header */
@@ -195,7 +221,7 @@ html {
     min-width: 157px;
     background-color: #fff;
     list-style-type: none;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 30px rgba(255, 34, 34, 0.7);
     word-spacing: initial;
     z-index: 3;
 }
@@ -439,6 +465,7 @@ html {
     /* margin-top: 50px; */
     top: -85px;
     border-radius: 25px;
+    box-shadow: 0 0 30px rgba(255, 20, 20, 0.7);
 }
 
 .modaDT__close {
@@ -499,6 +526,283 @@ html {
     }
 }
 
+/* Modal edit manage-token */
+.modaET.open {
+    display: flex;
+}
+
+.modaET {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+}
+
+.modaET-container {
+    background-color: #fff;
+    width: 370px;
+    max-width: calc(100% - 32px);
+    min-height: 100px;
+    position: relative;
+    animation: modalFadeInRC ease 1s;
+    top: -25px;
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(47, 255, 19, 0.7);
+}
+
+.modaET__close {
+    position: absolute;
+    right: 6px;
+    top: 2px;
+    padding: 2px;
+    color: #fff;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.modaET__close:hover {
+    opacity: 1;
+}
+
+.modaET__close ion-icon {
+    font-size: 25px;
+}
+
+.modaET__hd {
+    background-color: #000;
+    padding: 10px 25px;
+    text-align: center;
+    font-size: 20px;
+    color: #F0A500;
+    border-radius: 25px 25px 0 0;
+}
+
+.modaET__body {
+    padding: 10px;
+}
+
+.modaET__body-username {
+    padding: 10px;
+}
+
+.modaET__body-left {
+    width: 25%;
+    text-align: left;
+    margin-right: 15px;
+}
+
+.modaET__body-right {
+    width: 65%;
+    text-align: left;
+}   
+
+.ET-confirm {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #F0A500;
+    color: #000;
+    font-size: 17px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.ET-confirm:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* Modal edit manage-acc */
+
+.modaEA.open {
+    display: flex;
+}
+
+.modaEA {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+}
+
+.modaEA-container {
+    background-color: #fff;
+    width: 370px;
+    max-width: calc(100% - 32px);
+    min-height: 100px;
+    position: relative;
+    animation: modalFadeInRC ease 1s;
+    top: -25px;
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(255, 19, 243, 0.7);
+}
+
+.modaEA__close {
+    position: absolute;
+    right: 6px;
+    top: 2px;
+    padding: 2px;
+    color: #fff;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.modaEA__close:hover {
+    opacity: 1;
+}
+
+.modaEA__close ion-icon {
+    font-size: 25px;
+}
+
+.modaEA__hd {
+    background-color: #000;
+    padding: 10px 25px;
+    text-align: center;
+    font-size: 20px;
+    color: #F0A500;
+    border-radius: 25px 25px 0 0;
+}
+
+.modaEA__body {
+    padding: 10px;
+}
+
+.modaEA__body-username {
+    padding: 10px;
+}
+
+.modaEA__body-left {
+    width: 30%;
+    text-align: left;
+    margin-right: 15px;
+}
+
+.modaEA__body-right {
+    width: 60%;
+    text-align: left;
+}   
+
+.EA-confirm {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #F0A500;
+    color: #000;
+    font-size: 17px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.EA-confirm:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* Modal edit manage-user */
+.modaEU.open {
+    display: flex;
+}
+
+.modaEU {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+}
+
+.modaEU-container {
+    background-color: #fff;
+    width: 370px;
+    max-width: calc(100% - 32px);
+    min-height: 100px;
+    position: relative;
+    animation: modalFadeInRC ease 1s;
+    top: -25px;
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(19, 82, 255, 0.7);
+}
+
+.modaEU__close {
+    position: absolute;
+    right: 6px;
+    top: 2px;
+    padding: 2px;
+    color: #fff;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.modaEU__close:hover {
+    opacity: 1;
+}
+
+.modaEU__close ion-icon {
+    font-size: 25px;
+}
+
+.modaEU__hd {
+    background-color: #000;
+    padding: 10px 25px;
+    text-align: center;
+    font-size: 20px;
+    color: #F0A500;
+    border-radius: 25px 25px 0 0;
+}
+
+.modaEU__body {
+    padding: 10px;
+}
+
+.modaEU__body-username {
+    padding: 10px;
+}
+
+.modaEU__body-left {
+    width: 30%;
+    text-align: left;
+    margin-right: 15px;
+}
+
+.modaEU__body-right {
+    width: 60%;
+    text-align: left;
+}   
+
+.EU-confirm {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #F0A500;
+    color: #000;
+    font-size: 17px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.EU-confirm:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
 /* Modal nạp tiền */
 .modaRC.open {
     display: flex;
@@ -526,6 +830,7 @@ html {
     animation: modalFadeInRC ease 1s;
     top: -85px;
     border-radius: 25px;
+    box-shadow: 0 0 30px rgba(255, 178, 34, 0.7);
 }
 
 .modaRC__close {
@@ -808,9 +1113,9 @@ html {
 /* content */
 #content {
     /* margin-top: 56px; */
-    padding: 50px;
-    padding-bottom: 50px;
-    height: 100vh;
+    padding: 50px 50px 70px;
+    /* padding-bottom: 50px; */
+    min-height: 100vh;
     background-image: linear-gradient(45deg, #FFE459, #F43B86, #3D087B, #11052C);
 }
 
@@ -863,9 +1168,13 @@ html {
 }
 
 #content .link-gr a {
-    color: #0F00FF;
+    color: #fff;
     font-size: 16px;
     text-decoration: none;
+}
+
+#content .link-gr a:hover {
+    opacity: 0.8;
 }
 
 #content .manual {
@@ -934,6 +1243,416 @@ html {
     color: #FF0000;
 }
 
+/* content Page "get-token" */
+#content .get-token-container {
+    background-color: antiquewhite;
+    margin-top: 50px;
+    border-radius: 20px;
+    min-width: 285px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 1);
+}
+
+#content .get-token-hd {
+    font-size: 25px;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+#content .get-token-body  {
+    padding: 10px 30px 20px;
+}
+
+#content .get-token-mon {
+    width: 100%;
+    font-size: 17px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#content .get-token-sv, .get-token-type {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#content .get-token-left {
+    width: 30%;
+    text-align: left;
+}
+
+#content .get-token-mid {
+    width: 35%;
+    text-align: left;
+}
+
+#content .get-token-right {
+    width: 35%;
+    text-align: left;
+}
+
+#content .btn-get-token {
+    text-align: center;
+}
+
+#content .btn-get {
+    width: 75%;
+    font-size: 17px;
+    padding: 5px 0;
+    border-radius: 10px;
+    border: 2px solid #ff7259;
+    background-color: #F0A500;
+}
+
+#content .btn-get:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+#content .token-output {
+    width: 100%;
+    padding: 7px 0;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 17px;
+}
+
+/* content Page "manage_account" */
+
+#content .table__acc-container {
+    background-color: antiquewhite;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+#content .table__acc-title {
+    padding: 20px;
+    text-align: center;
+    background-color: #000;
+    border-radius: 20px 20px 0 0;
+}
+
+#content .table__acc-name-title {
+    font-size: 25px;
+    color: #F0A500;
+}
+
+#content .table__acc-name-sv {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#content .table__acc-name-sv.active {
+    opacity: 1;
+}
+
+#content .table__acc-name-sv,
+.table__acc-name-divive {
+    font-size: 25px;
+    color: #fff;
+}
+
+#content .table__acc-input {
+    padding: 20px 130px;
+}
+
+#content .table__acc-input-filed {
+    width: 35%;
+}
+
+#content .input-table_acc {
+    font-size: 17px;
+}
+
+#content .input-table_acc {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: 2px solid #F0A500;
+    border-radius: 20px;
+    transition: 0.25 ease;
+}
+
+#content .table__acc-input-opt {
+    
+}
+
+#content .input-opt-label {
+    display: inline-block;
+
+}
+
+#content .btn-add {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #F0A500;
+    color: #000;
+    width: 20%;
+    font-size: 17px;
+}
+
+#content .btn-add:hover {
+    background-color: #F0A500;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+#content .table__acc {
+    padding-bottom: 25px;
+    display: none;
+}
+
+#content .table__acc.active {
+    padding-bottom: 25px;
+    display: block;
+}
+
+#content .table__acc-list {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    margin: 0 50px;
+}
+
+#content .table__acc-list:first-child {
+    border-bottom: 2px solid #0078e7;
+} 
+
+#content .row-table_acc {
+    font-size: 18px;
+    color: #000;
+}
+
+#content .table__acc-id {
+    width: 25px;
+}
+
+#content .table__acc-mail {
+    width: 270px;
+}
+
+#content .table__acc-pass {
+    width: 150px;
+}
+
+#content .table__acc-type {
+    width: 50px;
+}
+
+#content .table__acc-status {
+    width: 140px;
+}
+
+#content .table__acc-edit {
+    width: 110px;
+}
+
+#content .table__acc-icon {
+    margin: 0 5px;
+}
+
+#content .table__acc-icon:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#content .nums-page {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+#content .nums-page .num-page {
+    text-decoration: none;
+}
+
+#content .num-page > div {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #F0A500;
+    color: #000;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+    margin: 5px;
+}
+
+#content .num-page:hover {
+    opacity: 0.8;
+}
+
+
+/* content Page "manage_user" */
+#content .table__user-container {
+    background-color: antiquewhite;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+#content .table__user-title {
+    padding: 20px;
+    text-align: center;
+    background-color: #000;
+    border-radius: 20px 20px 0 0;
+}
+
+#content .table__user-name-title {
+    font-size: 25px;
+    color: #F0A500;
+}
+
+#content .table__user-icon-title {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+#content .table__user-input {
+    margin: 10px;
+    text-align: right;
+}
+
+#content .table__user {
+    padding-bottom: 25px;
+}
+
+#content .table__user-list {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    margin: 0 50px;
+}
+
+#content .table__user-list:first-child {
+    border-bottom: 2px solid #0078e7;
+} 
+
+#content .row-table_user {
+    font-size: 18px;
+    color: #000;
+}
+
+#content .table__user-id {
+    width: 25px;
+}
+
+#content .table__user-name {
+    width: 100px;
+}
+
+#content .table__user-pass {
+    width: 100px;
+}
+
+#content .table__user-fname {
+    width: 170px;
+}
+
+#content .table__user-email {
+    width: 270px;
+}
+
+#content .table__user-role {
+    width: 110px;
+}
+
+#content .table__user-edit {
+    width: 110px;
+}
+
+#content .table__user-icon {
+    margin: 0 5px;
+}
+
+#content .table__user-icon:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+/* content Page "manage_token" */
+#content .table__token-container {
+    background-color: antiquewhite;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+#content .table__token-title {
+    padding: 20px;
+    text-align: center;
+    background-color: #000;
+    border-radius: 20px 20px 0 0;
+}
+
+#content .table__token-name-title {
+    font-size: 25px;
+    color: #F0A500;
+}
+
+#content .table__token-icon-title {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+#content .table__token {
+    padding-bottom: 25px;
+}
+
+#content .table__token-list {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    margin: 0 50px;
+}
+
+#content .table__token-list:first-child {
+    border-bottom: 2px solid #0078e7;
+} 
+
+#content .row-table_token {
+    font-size: 18px;
+    color: #000;
+}
+
+#content .table__token-id {
+    width: 25px;
+}
+
+#content .table__token-nametoken {
+    width: 120px;
+}
+
+#content .table__token-type {
+    width: 55px;
+}
+
+#content .table__token-service {
+    width: 100px;
+}
+
+#content .table__token-time {
+    width: 130px;
+}
+
+#content .table__token-dataget {
+    width: 200px;
+}
+
+#content .table__token-edit {
+    width: 110px;
+}
+
+#content .table__token-icon {
+    margin: 0 5px;
+}
+
+#content .table__token-icon:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
 
 /* footer */
 #footer {
