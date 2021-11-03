@@ -1,3 +1,4 @@
+<?php include('function.php') ?>
         <!-- Modal Thông tin chi tiết -->
         <!-- modaDT: dành cho moda Details (thông tin chi tiết) -->
         <div class="modaDT js-modaDT">
@@ -11,25 +12,34 @@
                 <div class="modaDT__body bold-5">
                     <div class="flex-center modaDT__body-id">
                         <div class="modaDT__body-left">ID</div>
-                        <div class="modaDT__body-right">1</div>
+                        <div class="modaDT__body-right"><?php echo $_SESSION['user_id'] ?></div>
                     </div>
                     <div class="flex-center modaDT__body-username">
                         <div class="modaDT__body-left">Username</div>
-                        <div class="modaDT__body-right">Minh</div>
+                        <div class="modaDT__body-right"><?php echo $_SESSION['username'] ?></div>
                     </div>
                     <div class="flex-center modaDT__body-fullname">
                         <div class="modaDT__body-left">Fullname</div>
-                        <div class="modaDT__body-right">Hồ Đức Thế Minh</div>
+                        <div class="modaDT__body-right"><?php echo $_SESSION['fullname'] ?></div>
                     </div>
                     <div class="flex-center modaDT__body-mail">
                         <div class="modaDT__body-left">Mail</div>
-                        <div class="modaDT__body-right">hoductheminh339@gmail.com</div>
+                        <div class="modaDT__body-right"><?php echo $_SESSION['email'] ?></div>
                     </div>
                     <div class="flex-center modaDT__body-role">
                         <div class="modaDT__body-left">Role</div>
-                        <div class="modaDT__body-right">Admin</div>
+                        <div class="modaDT__body-right"><?php echo checkRole() ?></div>
                     </div>
                 </div>
             </div>
         </div>
         <script src="./style/js/modaDT.js"></script>
+
+<?php 
+//Hàm kiểm tra role của user đăng nhập tương ứng
+function checkRole() {
+    return ($_SESSION['role'] == 2) ? 
+    "Admin" : (($_SESSION['role'] == 1) ? 
+    "Nhân viên" : "Khách");
+} 
+?>

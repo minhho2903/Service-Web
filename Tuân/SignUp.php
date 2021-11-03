@@ -12,18 +12,39 @@ function checkRegister($conn) {
         $fullname = $_POST['fullname'];
         $email = $_POST['email'];
 
+        //Kiểm tra user và email trong tb user
+        $sql1 = "SELECT username
+                FROM user 
+                WHERE username = '$username'";
+        $query1 = mysqli_query($conn, $sql1);
+        $num_rows1 = mysqli_num_rows($query1);
+
+        $sql2 = "SELECT email
+                FROM user 
+                WHERE email = '$email'";
+        $query2 = mysqli_query($conn, $sql2);
+        $num_rows2 = mysqli_num_rows($query2);
+
         //Kiểm tra mật khẩu nhập
         if ($password != $repassword) {
             echo "Mật khẩu nhập lại không đúng";
         } else {
-            //truy vấn dữ liệu
-            $sql = "INSERT INTO user(username, password, fullname, email)
-                    VALUES ('$username', '$password', '$fullname', '$email')";
-            //thực thi câu lệnh SQL với biến conn lấy từ file connection.php
-            mysqli_query($conn, $sql);
-            echo "<script>alert('Chúc mừng bạn đã đăng ký thành công tài khoản')</script>";
-            echo "<meta http-equiv=\"refresh\" content=\"0;URL=index.php\">";
-        }   
+            if ($num_rows1 == 1) {
+                echo "Tài khoản đã tồn tại, mời bạn đổi tên khác";
+            } else {
+                if ($num_rows2 == 1) {
+                    echo "Mail đã tồn tại, mời bạn đổi mail khác";
+                } else {
+                    //truy vấn dữ liệu
+                    $sql = "INSERT INTO user(username, password, fullname, email)
+                        VALUES ('$username', '$password', '$fullname', '$email')";
+                    //thực thi câu lệnh SQL với biến conn lấy từ file connection.php
+                    mysqli_query($conn, $sql);
+                    echo "<script>alert('Chúc mừng bạn đã đăng ký thành công tài khoản')</script>";
+                    echo "<meta http-equiv=\"refresh\" content=\"0;URL=index.php\">";
+                }
+            }
+        }
     }
 }
 

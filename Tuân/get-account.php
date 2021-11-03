@@ -16,7 +16,7 @@
                             <div class="btn-get-acc">
                                 <button class="get-acc bold-6 js-getacc">Nhận tài khoản</button>
                             </div>
-                            <div class="link-gr">
+                            <div class="link-gr bold-5">
                                 <a href="https://www.facebook.com/groups/kmphimgiare" target="_blank">Để được phục vụ tốt hơn, vui lòng tham gia cộng dồng của chúng tôi</a>
                             </div>
                         </div>

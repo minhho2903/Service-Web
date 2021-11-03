@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <title>Service Web</title>
 </head>
 <body>
@@ -30,16 +31,16 @@
                                 </a>
                             </li>
                             <li class="hd__nav-item"><a href="../index.php">Trang chủ</a></li>
-                            <li class="hd__nav-item"><a href="#">Lấy Token</a></li>
+                            <li class="hd__nav-item"><a href="get-token.php">Get Token</a></li>
                             <li class="hd__nav-item account">
                                 <a href="#">
                                     Quản lý
                                 </a>
                                 <ul class="subnav-admin">
-                                    <li><a href="#">Người dùng</a></li>
-                                    <li><a href="#">Token</a></li>
-                                    <li><a href="#">Tài khoản</a></li>
-                                    <li><a href="#">Danh sách</a></li>
+                                    <li><a href="manage-user.php">Người dùng</a></li>
+                                    <li><a href="manage-token.php">Token</a></li>
+                                    <li><a href="manage-account-net.php">Tài khoản</a></li>
+                                    <li><a href="manage-list.php">Danh sách</a></li>
                                 </ul>
                             </li>
                         </ul>
