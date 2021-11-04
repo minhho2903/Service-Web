@@ -24,7 +24,13 @@
                                     <ion-icon name="diamond-sharp"></ion-icon>
                                 </a>
                             </li>
-                            <?php if(isset($_SESSION["user_id"]) == true ) { ?> 
+                            <?php if(isset($_SESSION["user_id"]) == true ) { ?>
+                                <li class="account coin-hd">
+                                    <a class="flex-center money js-recharge" href="#">
+                                        100
+                                        <i class="money-icon fa fa-coins" style="color:#f7da40;"></i>
+                                    </a>
+                                </li>
                                 <li class="account">
                                     <a class="flex-center" href="#">
                                         <?php echo $_SESSION["fullname"] ?>
@@ -35,7 +41,7 @@
                                         <?php if ($_SESSION['role'] >= 1) { ?>
                                         <li><a href="./admin/index.php">Trang quản lý</a></li>
                                         <?php } else {?>
-                                        <li><a href="#">Nạp tiền</a></li>
+                                        <li class="js-recharge"><a href="#">Nạp tiền</a></li>
                                         <?php }?>
                                         <li><a href="logout.php">Đăng xuất</a></li>
                                     </ul>

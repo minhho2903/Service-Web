@@ -13,6 +13,7 @@
 
         <?php include('modal-info.php') ?>
 
+        <?php include('modal-add-coin.php') ?>
     </div>
 </body>
 </html>
