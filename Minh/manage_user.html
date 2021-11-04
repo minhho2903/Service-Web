@@ -83,7 +83,7 @@
                     <i class="table__user-icon-title fas fa-users" style="color:#F0A500;"></i>
                 </div>
                 <div class="table__user-input">
-                        <button type="submit" name="btn_add-user" class="btn-add bold-6">+ thêm thành viên</button>
+                        <button type="submit" name="btn_add-user" class="btn-add bold-6 js-AU">+ thêm thành viên</button>
                 </div>
                 <div class="table__user">
                     <div class="table__user-list bold-6">
@@ -151,7 +151,7 @@
             <p class="copyright">Web được phát triển bởi Hồ Đức Thế Minh và Vũ Đình Tuân</p>
         </div>
     </div>
-
+    
     <!-- Modal edit page manage-user -->
     <!-- modaEU:  dành cho moda Edit User -->
     <div class="modaEU js-modaEU">
@@ -198,6 +198,49 @@
         </div>
     </div>
     <script src="./assets/js/modaEU.js"></script>
+    
+    <!-- Modal add page manage-user -->
+    <!-- modaAU:  dành cho moda Add User -->
+    <div class="modaAU js-modaAU">
+        <div class="modaAU-container js-modaAU-container">
+            <div class="modaAU__close js-modaAU-close">
+                <ion-icon name="close-outline"></ion-icon>
+            </div>
+            <div class="modaAU__hd bold-6">
+                Chỉnh sửa thành viên
+            </div>
+            <div class="modaAU__body bold-5">
+                <div class="flex-center modaAU__body-username">
+                    <div class="modaAU__body-left">Username: </div>
+                    <input type="text" name="AU-username" class="modaAU__body-right p-5">
+                </div>
+                <div class="flex-center modaAU__body-username">
+                    <div class="modaAU__body-left">Password: </div>
+                    <input type="text" name="AU-password" class="modaAU__body-right p-5">
+                </div>
+                <div class="flex-center modaAU__body-username">
+                    <div class="modaAU__body-left">Fullname: </div>
+                    <input type="text" name="AU-fname" class="modaAU__body-right p-5">
+                </div>
+                <div class="flex-center modaAU__body-username">
+                    <div class="modaAU__body-left">Email: </div>
+                    <input type="text" name="AU-email" class="modaAU__body-right p-5">
+                </div>
+                <div class="flex-center modaAU__body-username">
+                    <div class="modaAU__body-left">Role: </div>
+                    <select name="AU" class="modaAU__body-right p-5">
+                        <option value="Admin">Admin</option>
+                        <option value="Admin">Nhân viên</option>
+                        <option value="Admin">Khách</option>
+                    </select>
+                </div>
+                <button class="AU-confirm bold-6">
+                    Thêm
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/modaAU.js"></script>
 
     <!-- Modal Nạp tiền -->
     <!-- modaRC:  dành cho moda Recharge (nạp tiền)-->
