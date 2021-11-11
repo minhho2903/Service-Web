@@ -19,7 +19,6 @@ for (const getRC of getRCs) {
     getRC.addEventListener('click', showForm)
 }
 
-
 // Nghe hành vi click vào button close
 modaCloseRC.addEventListener('click', hideForm)
 

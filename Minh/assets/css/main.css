@@ -15,6 +15,10 @@ html {
     box-sizing: border-box;
 }
 
+.padding-5 {
+    padding: 5px !important;
+}
+
 .p-5 {
     padding: 5px !important;
 }
@@ -57,6 +61,11 @@ html {
 
 .bold-7 {
     font-weight: 700 !important;
+}
+
+.italic {
+    font-style: italic !important;
+    letter-spacing: 1px !important;
 }
 
 .none {
@@ -913,9 +922,9 @@ html {
     z-index: 15;
 }
 
-.modaRC-container {
+.modaRC-container-guest, .modaRC-container-admin {
     background-color: #fff;
-    width: 370px;
+    width: 400px;
     max-width: calc(100% - 32px);
     min-height: 100px;
     position: relative;
@@ -947,23 +956,43 @@ html {
     background-color: #000;
     padding: 10px 25px;
     text-align: center;
-    font-size: 20px;
+    font-size: 22px;
     color: #F0A500;
     border-radius: 25px 25px 0 0;
 }
 
 .modaRC__body, .modaRC__body-id, .modaRC__body-username {
     padding: 10px;
+    font-size: 20px;
 }
 
-.modaRC__body-left {
-    width: 60%;
+.modaRC__body-contact {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    color: #f01c00;
+    margin-bottom: 5px;
+}
+
+.modaRC__body-guest-left {
+    width: 80%;
     text-align: right;
+    margin-right: 10px;
+}
+
+.modaRC__body-guest-right {
+    width: 50%;
+    text-align: left;
+}
+
+.modaRC__body-admin-left {
+    width: 30%;
+    text-align: left;
     margin-right: 15px;
 }
 
-.modaRC__body-right {
-    width: 60%;
+.modaRC__body-admin-right {
+    width: 70%;
     text-align: left;
 }
 
@@ -974,7 +1003,7 @@ html {
     border-radius: 20px;
     background-color: #F0A500;
     color: #000;
-    font-size: 17px;
+    font-size: 18px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -992,6 +1021,137 @@ html {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Modal thông tin chi tiết page "Quản lý danh sách*/
+.modaID.open {
+    display: flex;
+}
+
+.modaID {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+}
+
+.modaID-container {
+    background-color: #fff;
+    width: 500px;
+    max-width: calc(100% - 32px);
+    min-height: 100px;
+    position: relative;
+    animation: modalFadeInRC ease 1s;
+    top: -25px;
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(0, 253, 55, 0.7);
+}
+
+.modaID__close {
+    position: absolute;
+    right: 8px;
+    top: 4px;
+    padding: 2px;
+    color: #fff;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.modaID__close:hover {
+    opacity: 1;
+}
+
+.modaID__close ion-icon {
+    font-size: 25px;
+}
+
+.modaID__hd {
+    background-color: #000;
+    padding: 10px 25px;
+    text-align: center;
+    font-size: 22px;
+    color: #F0A500;
+    border-radius: 25px 25px 0 0;
+}
+
+.modaID__body, .modaID__body-username {
+    padding: 10px;
+    font-size: 18px;
+}
+
+.modaID__body-left {
+    width: 35%;
+    text-align: left;
+}
+
+.modaID__body-right {
+    width: 80%;
+    text-align: left;
+}
+
+.modaID__form-left {
+    width: 30%;
+    text-align: left;
+}
+
+.modaID__form-mid {
+    width: 35%;
+}
+
+.modaID__form-right {
+    width: 35%;
+    text-align: left;
+}
+
+.modaID__mail-acc {
+    padding: 5px 0;
+}
+
+.ID-btn {
+    text-align: center;
+}
+
+.ID-btn-reuse, .ID-btn-delete {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.ID-btn-reuse {
+    color: #000;
+    background-color: #F0A500;
+}
+
+.ID-btn-delete {
+    color: #F0A500;
+    background-color: #000;
+}
+
+.ID-btn-reuse:hover, .ID-btn-delete:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.ID-confirm {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #F0A500;
+    color: #000;
+    font-size: 17px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.ID-confirm:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 /* Modal đăng ký */
@@ -1199,7 +1359,7 @@ html {
     -webkit-transform 1s ease-out;
 } */
 .carousel .carousel-item {
-    transition-duration: 1s;
+    transition-duration: 2s;
 }
 
 /* content */
@@ -1236,9 +1396,14 @@ html {
 }
 
 #content .token-check {
-    margin-top: 5px;
+    margin-top: 10px;
     text-align: left;
     font-size: 18px;
+}
+
+#content .btn-get-acc-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 #content .btn-get-acc {
@@ -1261,12 +1426,12 @@ html {
 
 #content .link-gr a {
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
     text-decoration: none;
 }
 
 #content .link-gr a:hover {
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 #content .manual {
@@ -1746,9 +1911,188 @@ html {
     cursor: pointer;
 }
 
+/* content Page "manage_list" */
+#content .table__list-container {
+    background-color: antiquewhite;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+#content .table__list-title {
+    padding: 20px;
+    text-align: center;
+    background-color: #000;
+    border-radius: 20px 20px 0 0;
+}
+
+#content .table__list-name-title {
+    font-size: 25px;
+    color: #F0A500;
+}
+
+#content .table__list-icon-title {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+#content .table__list {
+    padding-bottom: 25px;
+}
+
+#content .table__list-outside {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    margin: 0 50px;
+}
+
+#content .table__list-list:first-child {
+    border-bottom: 2px solid #0078e7;
+} 
+
+#content .row-table_list {
+    font-size: 18px;
+    color: #000;
+}
+
+#content .table__list-nametoken {
+    width: 130px;
+}
+
+#content .table__list-type {
+    width: 55px;
+}
+
+#content .table__list-service {
+    width: 100px;
+}
+
+#content .table__list-time {
+    width: 100px;
+}
+
+#content .table__list-email {
+    width: 270px;
+}
+
+#content .table__list-pass {
+    width: 100px;
+}
+
+#content .table__list-dataget {
+    width: 180px;
+}
+
+#content .table__list-edit {
+    width: 90px;
+}
+
+#content .table__list-icon {
+    margin: 0 5px;
+}
+
+#content .table__list-icon:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+/* content page "price_service*/
+#content .list-price__services {
+    text-align: center;
+    font-size: 35px;
+    margin-top: 56px;
+    color: #fff;
+}
+
+#content .list-price__services-name {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+#content .list-price__services-name.active {
+    opacity: 1;
+}
+
+#content .list-price-outside {
+    display: none;
+}
+
+#content .list-price-outside.active {
+    display: block;
+}
+
+#content .list-price {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px 0 50px;
+}
+
+#content .item-price {
+    border-radius: 20px;
+    border: 3px solid #0a1931;
+    box-shadow: 2px 2px #0a1931;
+    background: #fff;
+    width: calc(23% - 5px);
+    overflow: hidden;
+    transition: all .2s ease;
+    margin: 10px 0;
+}
+
+#content .item-price:hover {
+    transform: scale(1.10);
+}
+
+#content .item-price__title {
+    background-color: #F0A500;
+    border-bottom: 3px solid #000;
+}
+
+#content .item-price__title-hd {
+    color: #000;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0;
+    padding: 5px 0;
+    text-align: center;
+}
+
+#content .item-price__body {
+    text-align: center;
+    padding: 10px;
+}
+
+#content .item-price-date {
+    font-weight: 700;
+    font-size: 18px;
+    color: #0078e7;
+    margin: 10px 0;
+}
+
+#content .item-price-quality {
+    font-weight: 700;
+    font-size: 18px;
+    color: #dd067b;
+}
+
+#content .btn-price {
+    color: #0a1931;
+    letter-spacing: 2px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: #ffc947;
+    margin: 10px 0 6px;
+    font-size: 17px;
+}
+
+#content .btn-price:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
 /* footer */
 #footer {
-    height: 100px;
+    min-height: 100px;
     background-color:rgba(0, 0, 0, 1);
     padding: 20px 16px;
     text-align: center;

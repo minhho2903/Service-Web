@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-    <title>Quản lý token</title>
+    <title>Quản lý danh sách</title>
 </head>
 <body>
     <div class="main">
@@ -38,9 +38,9 @@
                                 </a>
                                 <ul class="subnav-admin">
                                     <li><a href="./manage_user.html">Người dùng</a></li>
-                                    <li><a href="#">Token</a></li>
+                                    <li><a href="./manage_token.html">Token</a></li>
                                     <li><a href="./manage_account.html">Tài khoản</a></li>
-                                    <li><a href="./manage_list.html">Danh sách</a></li>
+                                    <li><a href="#">Danh sách</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -78,47 +78,62 @@
 
         <!-- Content -->
         <div id="content">
-            <div class="grid wide-1000 table__token-container">
-                <div class="table__token-title">
-                    <span class="table__token-name-title bold-5">Bảng quản lý Token</span>
-                    <i class="table__token-icon-title fas fa-link" style="color:#F0A500;"></i>
+            <div class="grid wide table__list-container">
+                <div class="table__list-title">
+                    <span class="table__list-name-title bold-5">Bảng quản lý danh sách</span>
+                    <i class="table__list-icon-title fas fa-list-ul" style="color:#F0A500;"></i>
                 </div>
-                <div class="table__token">
-                    <div class="table__token-list bold-6">
-                        <div class="row-table_token color-blue table__token-id">ID</div>
-                        <div class="row-table_token color-blue table__token-nametoken">Token</div>
-                        <div class="row-table_token color-blue table__token-type">Type</div>
-                        <div class="row-table_token color-blue table__token-service">Service</div>
-                        <div class="row-table_token color-blue table__token-time">Time</div>
-                        <div class="row-table_token color-blue table__token-dataget">Date Get</div>
-                        <div class="row-table_token color-blue table__token-edit">Edit</div>
+                <div class="table__list">
+                    <div class="table__list-outside bold-6">
+                        <div class="row-table_list color-blue table__list-nametoken">Token</div>
+                        <div class="row-table_list color-blue table__list-type">Type</div>
+                        <div class="row-table_list color-blue table__list-service">Service</div>
+                        <div class="row-table_list color-blue table__list-time">Time</div>
+                        <div class="row-table_list color-blue table__list-email">Email</div>
+                        <div class="row-table_list color-blue table__list-pass">Pass</div>
+                        <div class="row-table_list color-blue table__list-dataget">Date Get</div>
+                        <div class="row-table_list color-blue table__list-edit">Edit</div>
                     </div>
-                    <div class="table__token-list color-block">
-                        <div class="row-table_token table__token-id">1</div>
-                        <div class="row-table_token table__token-nametoken">m9agaAQjjT</div>
-                        <div class="row-table_token table__token-type">4K</div>
-                        <div class="row-table_token table__token-service Netflix">Netflix</div>
-                        <div class="row-table_token table__token-time">12 tháng</div>
-                        <div class="row-table_token table__token-dataget">01-5-2021 12:23:01</div>
-                        <div class="row-table_token table__token-edit">
-                            <i class="table__token-icon fas fa-edit js-ET" style="color: #59bb54"></i>
-                            <i class="table__token-icon fas fa-lock" style="color: #4e0eff"></i>
-                            <i class="table__token-icon fas fa-lock-open none" style="color: #4e0eff"></i>
-                            <i class="table__token-icon fas fa-trash-alt" style="color: #f71b1b;"></i>
+                    <div class="table__list-outside">
+                        <div class="row-table_list table__list-nametoken">m9agaAQjjT</div>
+                        <div class="row-table_list table__list-type">4K</div>
+                        <div class="row-table_list table__list-service Netflix">Netflix</div>
+                        <div class="row-table_list table__list-time">3 tháng</div>
+                        <div class="row-table_list table__list-email">hoductheminh339@gmail.com</div>
+                        <div class="row-table_list table__list-pass">123456</div>
+                        <div class="row-table_list table__list-dataget">01-05-2021 12:23:01</div>
+                        <div class="row-table_list table__list-edit">
+                            <i class="table__list-icon far fa-id-card js-ID" style="color: #2c2323"></i>
+                            <i class="table__list-icon fas fa-lock none" style="color: #4e0eff"></i>
+                            <i class="table__list-icon fas fa-lock-open" style="color: #4e0eff"></i>
                         </div>
                     </div>
-                    <div class="table__token-list">
-                        <div class="row-table_token table__token-id">1</div>
-                        <div class="row-table_token table__token-nametoken">34jhAFqmk5</div>
-                        <div class="row-table_token table__token-type">HD</div>
-                        <div class="row-table_token table__token-service Disney">Disney</div>
-                        <div class="row-table_token table__token-time">12 tháng</div>
-                        <div class="row-table_token table__token-dataget">01-5-2021 12:23:01</div>
-                        <div class="row-table_token table__token-edit">
-                            <i class="table__token-icon fas fa-edit js-ET" style="color: #59bb54"></i>
-                            <i class="table__token-icon fas fa-lock none" style="color: #4e0eff"></i>
-                            <i class="table__token-icon fas fa-lock-open" style="color: #4e0eff"></i>
-                            <i class="table__token-icon fas fa-trash-alt" style="color: #f71b1b;"></i>
+                    <div class="table__list-outside color-block">
+                        <div class="row-table_list table__list-nametoken">T9asfjAqh6</div>
+                        <div class="row-table_list table__list-type">HD</div>
+                        <div class="row-table_list table__list-service Netflix">Netflix</div>
+                        <div class="row-table_list table__list-time">12 tháng</div>
+                        <div class="row-table_list table__list-email">vudinhtuan49@gmail.com</div>
+                        <div class="row-table_list table__list-pass">conchimnon</div>
+                        <div class="row-table_list table__list-dataget">21-08-2021 15:15:12</div>
+                        <div class="row-table_list table__list-edit">
+                            <i class="table__list-icon far fa-id-card js-ID" style="color: #2c2323"></i>
+                            <i class="table__list-icon fas fa-lock" style="color: #4e0eff"></i>
+                            <i class="table__list-icon fas fa-lock-open none" style="color: #4e0eff"></i>
+                        </div>
+                    </div>
+                    <div class="table__list-outside">
+                        <div class="row-table_list table__list-nametoken">qh7Ajq98jq</div>
+                        <div class="row-table_list table__list-type">4K</div>
+                        <div class="row-table_list table__list-service Disney">Disney</div>
+                        <div class="row-table_list table__list-time">6 tháng</div>
+                        <div class="row-table_list table__list-email">guestland123@gmail.com</div>
+                        <div class="row-table_list table__list-pass">data12789</div>
+                        <div class="row-table_list table__list-dataget">08-12-2021 07:53:44</div>
+                        <div class="row-table_list table__list-edit">
+                            <i class="table__list-icon far fa-id-card js-ID" style="color: #2c2323"></i>
+                            <i class="table__list-icon fas fa-lock none" style="color: #4e0eff"></i>
+                            <i class="table__list-icon fas fa-lock-open" style="color: #4e0eff"></i>
                         </div>
                     </div>
                 </div>
@@ -142,59 +157,62 @@
         </div>
     </div>
 
-    <!-- Modal edit page manage-token -->
-    <!-- modaET:  dành cho moda Edit Token -->
-    <div class="modaET js-modaET">
-        <div class="modaET-container js-modaET-container">
-            <div class="modaET__close js-modaET-close">
+    <!-- Modal Information Detail page manage-list -->
+    <!-- modaID:  dành cho moda Information Detail -->
+    <div class="modaID js-modaID">
+        <div class="modaID-container js-modaID-container">
+            <div class="modaID__close js-modaID-close">
                 <ion-icon name="close-outline"></ion-icon>
             </div>
-            <div class="modaET__hd bold-6">
-                Chỉnh sửa Token
+            <div class="modaID__hd bold-6">
+                Thông tin chi tiết
             </div>
-            <div class="modaET__body bold-5">
-                <div class="flex-center modaET__body-username">
-                    <div class="modaET__body-left">ID: </div>
-                    <div class="modaET__body-right">1</div>
+            <div class="modaID__body bold-5">
+                <div class="flex-between modaID__body-username">
+                    <div class="modaID__body-left">Token name:</div>
+                    <div class="modaID__body-right">m9agaAQjjT</div>
                 </div>
-                <div class="flex-center modaET__body-username">
-                    <div class="modaET__body-left">Token: </div>
-                    <div class="modaET__body-right">m9agaAQjjT</div>
+                <div class="flex-between modaID__body-username">
+                    <div class="modaID__body-left">Status:</div>
+                    <div class="modaID__body-right">Token đang sử dụng</div>
                 </div>
-                <div class="flex-center modaET__body-username">
-                    <div class="modaET__body-left">Type: </div>
-                    <select name="ET-type" class="modaET__body-right p-5">
-                        <option value="HD">HD</option>
-                        <option value="4K">4K</option>
-                    </select>
+                <div class="flex-between modaID__body-username">
+                    <div class="modaID__body-left">Type:</div>
+                    <div class="modaID__body-right">4K</div>
                 </div>
-                <div class="flex-center modaET__body-username">
-                    <div class="modaET__body-left">Service: </div>
-                    <select name="ET-service" class="modaET__body-right p-5">
-                        <option value="Netflix">Netflix</option>
-                        <option value="Disney+">Disney+</option>
-                    </select>
+                <div class="flex-between modaID__body-username">
+                    <div class="modaID__body-left">Time:</div>
+                    <div class="modaID__body-right">1 Tháng</div>
                 </div>
-                <div class="flex-center modaET__body-username">
-                    <div class="modaET__body-left">Time: </div>
-                    <select name="ET-time" class="modaET__body-right p-5">
-                        <option value="1m">1 tháng</option>
-                        <option value="3m">3 tháng</option>
-                        <option value="6m">6 tháng</option>
-                        <option value="12m">12 tháng</option>
-                    </select>
+                <form action="" class="flex-between modaID__body-username">
+                    <div class="modaID__form-left">Account:</div>
+                    <div class="modaID__form-mid">
+                        <div class="modaID__mail-acc">
+                            <input type="checkbox" name="mail-acc" id="" style="width: 18px; height: 18px">
+                            <span>d1@gmail.com</span>
+                        </div>
+                        <div class="modaID__mail-acc">
+                            <input type="checkbox" name="mail-acc" id="" style="width: 18px; height: 18px">
+                            <span>d2@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="modaID__form-right">
+                        <div class="modaID__mail-acc">
+                            2021-11-05 20:55:48
+                        </div>
+                        <div class="modaID__mail-acc">
+                            2021-11-05 20:45:22
+                        </div>
+                    </div>
+                </form>
+                <div class="ID-btn">
+                    <button class="ID-btn-reuse bold-6">Reuse</button>
+                    <button class="ID-btn-delete bold-6">Delete</button>
                 </div>
-                <div class="flex-center modaET__body-username">
-                    <div class="modaET__body-left">Date Get: </div>
-                    <input type="datetime-local" name="ET-dataget" class="modaET__body-right p-5">
-                </div>
-                <button class="ET-confirm bold-6">
-                    Cập nhật
-                </button>
             </div>
         </div>
     </div>
-    <script src="./assets/js/modaET.js"></script>
+    <script src="./assets/js/modaID.js"></script>
 
     <!-- Modal Nạp tiền -->
     <!-- modaRC:  dành cho moda Recharge (nạp tiền)-->

@@ -8,7 +8,7 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/grid.css">
-    <link rel="stylesheet" href="./assets/css/modaSP_GA-fixed.css">
+    <link rel="stylesheet" href="./assets/css/modaSP_GA_WA-fixed.css">
     <link rel="stylesheet" href="./assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,7 @@
                                     <li><a href="./manage_user.html">Người dùng</a></li>
                                     <li><a href="./manage_token.html">Token</a></li>
                                     <li><a href="./manage_account.html">Tài khoản</a></li>
-                                    <li><a href="#">Danh sách</a></li>
+                                    <li><a href="./manage_list.html">Danh sách</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -65,6 +65,7 @@
                                 <ul class="subnav">
                                     <li class="js-details"><a href="#">Thông tin chi tiết</a></li>
                                     <li><a href="#">Trang quản lý</a></li>
+                                    <li><a href="./token_guest.html">Token đã mua</a></li>
                                     <li class="js-recharge"><a href="#">Nạp tiền</a></li>
                                     <li><a href="#">Đăng xuất</a></li>
                                 </ul>
@@ -193,7 +194,7 @@
     <!-- Modal Nạp tiền -->
     <!-- modaRC:  dành cho moda Recharge (nạp tiền)-->
     <div class="modaRC js-modaRC">
-        <div class="modaRC-container js-modaRC-container">
+        <!-- <div class="modaRC-container-guest none js-modaRC-container">
             <div class="modaRC__close js-modaRC-close">
                 <ion-icon name="close-outline"></ion-icon>
             </div>
@@ -202,14 +203,29 @@
             </div>
             <div class="modaRC__body bold-5">
                 <div class="flex-center modaRC__body-id">
-                    <div class="modaRC__body-left">Số tiền hiện có: </div>
-                    <div class="modaRC__body-right">100
+                    <div class="modaRC__body-guest-left">Số tiền hiện có: </div>
+                    <div class="modaRC__body-guest-right">100
                         <i class="money-icon fa fa-coins" style="color:#f7da40;"></i>
                     </div>
                 </div>
+                <a href="https://www.facebook.com/kmphimgiare.support" target="_blank" class="modaRC__body-contact">Liên hệ với Page để được nạp thêm tiền</a>
+            </div>
+        </div> -->
+        <div class="modaRC-container-admin js-modaRC-container">
+            <div class="modaRC__close js-modaRC-close">
+                <ion-icon name="close-outline"></ion-icon>
+            </div>
+            <div class="modaRC__hd bold-6">
+                Thông tin số dư cá nhân
+            </div>
+            <div class="modaRC__body bold-5">
+                <div class="flex-center modaRC__body-id">
+                    <div class="modaRC__body-admin-left">Username: </div>
+                    <input type="text" name="" id="" class="modaRC__body-admin-right p-5">
+                </div>
                 <div class="flex-center modaRC__body-username">
-                    <div class="modaRC__body-left">Bạn muốn nạp thêm: </div>
-                    <input type="number" min="100" max="1000" name="recharge" id="" class="modaRC__body-right p-5" placeholder="min = 100 max = 1000">
+                    <div class="modaRC__body-admin-left">Nạp thêm: </div>
+                    <input type="number" min="100" max="1000" name="recharge" id="" class="modaRC__body-admin-right p-5" placeholder="min = 100 max = 1000">
                 </div>
                 <button class="RC-confirm bold-6">
                     Xác Nhận
