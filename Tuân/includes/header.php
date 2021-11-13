@@ -1,4 +1,12 @@
 <?php require_once('includes/connection.php') ?>
+<?php 
+    if(isset($_SESSION['user_id'])){
+        $id = $_SESSION['user_id'];
+        $sql = "SELECT * FROM user WHERE id = $id";
+        $query = mysqli_query($conn, $sql);
+        $data = mysqli_fetch_array($query);
+    }
+?>
 
 <body>
     <div class="main">
@@ -15,6 +23,9 @@
                             </li>
                             <li class="hd__nav-item"><a href="index.php">Trang chủ</a></li>
                             <li class="hd__nav-item"><a href="get-account.php">Nhận tài khoản</a></li>
+                            <?php if(isset($_SESSION["role"]) >= 0) { ?>
+                            <li class="hd__nav-item"><a href="get-token.php">Mua token</a></li>
+                            <?php } ?>
                             <li class="hd__nav-item"><a href="price-service.php">Gói dịch vụ</a></li>
                             <li class="hd__nav-item js-support"><a href="#">Hỗ trợ</a></li>
                         </ul>
@@ -28,10 +39,10 @@
                                 <li class="account coin-hd">
                                     <a class="flex-center money js-recharge" href="#">
                                         <?php 
-                                        if($_SESSION["coin"] > 9999) {
+                                        if($data["coin"] > 9999) {
                                             echo '9999+';
                                         } else {
-                                            echo $_SESSION["coin"];
+                                            echo $data["coin"];
                                         }
                                         ?>
                                         <i class="money-icon fa fa-coins" style="color:#f7da40;"></i>
@@ -45,7 +56,7 @@
                                     <ul class="subnav">
                                         <li class="js-details"><a href="#">Thông tin chi tiết</a></li>
                                         <?php if ($_SESSION['role'] >= 1) { ?>
-                                        <li><a href="./admin/index.php">Trang quản lý</a></li>
+                                        <li><a href="./admin/manage-list.php">Trang quản lý</a></li>
                                         <?php } else {?>
                                         <li class="js-recharge"><a href="token-guest.php">Token đã mua</a></li>
                                         <?php }?>

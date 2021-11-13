@@ -1,5 +1,6 @@
-<?php include('includes/role1.php') ?>
-<?php include('includes/header-admin.php') ?>
+<?php include('includes/role0.php') ?>
+<?php include('includes/head2.php') ?>
+<?php include('includes/header.php') ?>
 <?php require_once('includes/connection.php') ?>
 <?php 
 //Hàm tạo chuỗi ngẫu nhiên

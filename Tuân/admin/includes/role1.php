@@ -3,7 +3,7 @@
 
     if (isset($_SESSION['user_id']) == false) {
         //Nếu người dùng chưa đăng nhập thì chuyển hướng sang trang đăng nhập
-        header('Location: ../login.php');
+        header('Location: ../SignIn.php');
     } else {
         if (isset($_SESSION["role"])) {
             //Ngược lại nếu đã đăn nhập

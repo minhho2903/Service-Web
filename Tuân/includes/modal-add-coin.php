@@ -1,9 +1,11 @@
         <?php require_once('connection.php') ?>
         <?php
-            $id = $_SESSION['user_id'];
-            $sql_acc = "SELECT * FROM user WHERE id = $id";
-            $query_acc = mysqli_query($conn, $sql_acc);
-            $data_acc = mysqli_fetch_array($query_acc);
+            if(isset($_SESSION['user_id'])) {
+                $id = $_SESSION['user_id'];
+                $sql_acc = "SELECT * FROM user WHERE id = $id";
+                $query_acc = mysqli_query($conn, $sql_acc);
+                $data_acc = mysqli_fetch_array($query_acc);
+            }
         ?>
 
         <!-- Modal Nạp tiền -->

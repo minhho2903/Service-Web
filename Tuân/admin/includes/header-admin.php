@@ -32,7 +32,6 @@
                                 </a>
                             </li>
                             <li class="hd__nav-item"><a href="../index.php">Trang chủ</a></li>
-                            <li class="hd__nav-item"><a href="get-token.php">Get Token</a></li>
                             <li class="hd__nav-item account">
                                 <a href="#">
                                     Quản lý

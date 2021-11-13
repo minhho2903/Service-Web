@@ -1,3 +1,12 @@
+        <?php require_once('connection.php') ?>
+        <?php
+            if(isset($_SESSION['user_id'])) {
+                $id = $_SESSION['user_id'];
+                $sql = "SELECT * FROM user WHERE id = $id";
+                $query = mysqli_query($conn, $sql);
+                $data = mysqli_fetch_array($query);
+            }
+        ?>
         <!-- Modal Thông tin chi tiết -->
         <!-- modaDT: dành cho moda Details (thông tin chi tiết) -->
         <div class="modaDT js-modaDT">
@@ -27,7 +36,7 @@
                     </div>
                     <div class="flex-center modaDT__body-coin">
                         <div class="modaDT__body-left">Coin</div>
-                        <div class="modaDT__body-right"><?php echo $_SESSION['coin'] ?></div>
+                        <div class="modaDT__body-right"><?php echo $data['coin'] ?></div>
                     </div>
                     <div class="flex-center modaDT__body-role">
                         <div class="modaDT__body-left">Role</div>
