@@ -47,9 +47,9 @@
                                         <?php if ($_SESSION['role'] >= 1) { ?>
                                         <li><a href="./admin/index.php">Trang quản lý</a></li>
                                         <?php } else {?>
-                                        <li class="js-recharge"><a href="#">Nạp tiền</a></li>
                                         <li class="js-recharge"><a href="token-guest.php">Token đã mua</a></li>
                                         <?php }?>
+                                        <li class="js-recharge"><a href="#">Nạp tiền</a></li>
                                         <li><a href="logout.php">Đăng xuất</a></li>
                                     </ul>
                                 </li>

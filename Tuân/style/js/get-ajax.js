@@ -16,7 +16,6 @@ $(document).ready(function()
         return false;
     }
 
-
     //Lấy toàn bộ dữ liệu trong Form
     var datas = $('form#form_input').serialize();
     

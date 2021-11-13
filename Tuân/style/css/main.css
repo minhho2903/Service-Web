@@ -903,6 +903,8 @@ html {
 .modaRC__body-admin-right {
     width: 70%;
     text-align: left;
+    font-size: 20px;
+    line-height: 1.5;
 }
 
 .RC-confirm {
@@ -919,6 +921,12 @@ html {
 .RC-confirm:hover {
     opacity: 0.8;
     cursor: pointer;
+}
+
+.message {
+    color: red;
+    text-align: center;
+    padding: 8px 0;
 }
 
 @keyframes modalFadeInRC {
