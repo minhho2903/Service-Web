@@ -11,6 +11,7 @@ if(isset($_POST['btn_edit'])) {
     $role = ($_POST['role'] == "Admin") ? 
     2 : (($_POST['role'] == "Nhân viên") ? 
     1 : 0);
+    echo "Role: " . $role;
 
     $sql = "UPDATE user
             SET username = '$username', 

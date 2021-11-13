@@ -19,28 +19,22 @@
                         <i>Logo</i>
                     </li>
                     <li class="item">
-                        <a href="../index.php" class="item-link">Trang chủ</a>
+                        <a href="index.php" class="item-link">Trang chủ</a>
                     </li>
                     <li class="item">
-                        <a href="get-token.php" class="item-link">Get Token</a>
+                        <a href="#!" class="item-link">Nhận tài khoản</a>
                     </li>
                     <li class="item">
-                        <!-- <a href="#!" class="item-link">Manage</a> -->
-                        <a class="item-link">Manage</a>
-                        <div class="item_menu">
-                            <a href="manage-user.php" class="item_menu-link">User</a>
-                            <a href="manage-token.php" class="item_menu-link">Token</a>
-                            <a href="manage-acc-net.php" class="item_menu-link">Account</a>
-                            <a href="manage-list.php" class="item_menu-link">List</a>
-                        </div>
+                        <a href="#!" class="item-link">Gói dịch vụ</a>
                     </li>
-                    <!-- <li class="item">
-                        <a href="#!" class="item-link">Manage User</a>
-                    </li> -->
+                    <li class="item">
+                        <a href="#!" class="item-link">Hỗ trợ</a>
+                    </li>
                 </ul>
             </div>
 
-            <div class="header-right">
+            <?php if(isset($_SESSION['user_id'])) { ?>
+            <div class="header-right active">
                 <ul class="list">
                     <li class="item">
                         <p class="item-name"><?php echo $_SESSION['fullname'] ?></p>
@@ -48,13 +42,26 @@
                     <li class="item">
                         <i class="item-icon fas fa-bars"></i>
                         <div class=item_nav>
-                            <a href="../info-login.php" class="item_nav-link">Thông tin chi tiết</a>
-                            <a href="../logout.php" class="item_nav-link">Đăng xuất</a>
+                            <a href="info-login.php" class="item_nav-link">Thông tin chi tiết</a>
+                            <a href="#" class="item_nav-link">Nạp tiền</a>
+                            <a href="logout.php" class="item_nav-link">Đăng xuất</a>
                         </div>
                     </li>
                 </ul>
-            </div>            
-
+            </div>
+            
+            <?php } else { ?>
+            <div class="header-right active">
+                <ul class="list">
+                    <li class="item">
+                        <a href="register.php" class="item-link">Đăng ký</a>
+                    </li>
+                    <li class="item">
+                        <a href="login.php" class="item-link">Đăng nhập</a>
+                    </li>
+                </ul>
+            </div>
+            <?php }?>
         </div>
     </header>
 

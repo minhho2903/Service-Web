@@ -10,7 +10,6 @@ if (isset($_POST['btn_add'])) {
     $role = ($_POST['role'] == "Admin") ? 
     2 : (($_POST['role'] == "Nhân viên") ? 
     1 : 0);
-    
     $sql = "INSERT INTO user(username, password, fullname, email, role)
             VALUES ('$username', '$password', '$fullname', '$email', '$role')";
     mysqli_query($conn, $sql);

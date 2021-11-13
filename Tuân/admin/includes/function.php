@@ -1,20 +1,17 @@
 <?php require_once('includes/connection.php') ?>
 <?php 
-// Hàm kiểm tra role của user đăng nhập tương ứng
-// function checkRole() {
-//     return ($_SESSION['role'] == 2) ? 
-//     "Admin" : (($_SESSION['role'] == 1) ? 
-//     "Nhân viên" : "Khách");
-// }
 
-// function checkRoleShow($data) {
-//     return ($data['role'] == 2) ? 
-//             "Admin" : (($data['role'] == 1) ? 
-//             "Nhân viên" : "Khách");
-// }
+function checkRole($conn, $role_required = 0, $pageIndex, $pageName) {
+    $role = $_SESSION['role'];
+    if ($role < $role_required) {
+        echo "Bạn không có quyền truy cập vào trang này" . "</br>";
+        echo "<a href='../index.php'> Quay lại trang chủ </a>";
+        exit();
+    } else {
+        echo  "<a class='item_nav-link' href=admin/" . $pageIndex . ".php>" . $pageName . "</a>" . "</br>";
+    }
+}
 
-// function checkUsed($data) {
-//     return ($data['used'] == 0) ? "Chưa sử dụng" : "Đã dùng";
-// }
+// function rolePage
 
 ?>

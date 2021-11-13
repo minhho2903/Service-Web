@@ -23,10 +23,10 @@
     function checkService($conn, $data) {
         $colorCheck = "";
         if ($data['service'] == 'Netflix') {
-            $colorCheck = "Netflix";
+            $colorCheck = "colorRed";
         }
         if ($data['service'] == 'Disney') {
-            $colorCheck = "Disney";
+            $colorCheck = "colorBlue";
         }
         return $colorCheck;
     }
@@ -34,15 +34,15 @@
     function checkBlocked($conn, $data) {
         $colorBlock = "";
         if ($data['blocked'] == 1) {
-            $colorBlock = 'color-block';
+            $colorBlock = 'blocked';
         }
         return $colorBlock;
     }
 
     function IconBlock($conn, $data) {
-        $iconBlock = '<i class="table__token-icon blue fas fa-lock"></i>';
+        $iconBlock = '<i class="fas fa-lock"></i>';
         if ($data['blocked'] == 1) {
-            $iconBlock = '<i class="table__token-icon blue fas fa-lock-open"></i>';
+            $iconBlock = '<i class="fas fa-lock-open"></i>';
         }
         return $iconBlock;
     }
@@ -56,122 +56,128 @@
     }
 ?>
 
-        <!-- Content -->
-        <div id="content">
-            <div class="grid wide-1000 table__token-container">
-                <div class="table__token-title">
-                    <span class="table__token-name-title bold-5">Bảng quản lý Token</span>
-                    <i class="table__token-icon-title fas fa-link" style="color:#F0A500;"></i>
-                </div>
-                <div class="table__token">
-                    <div class="table__token-list bold-6">
-                        <div class="row-table_token color-blue table__token-id">ID</div>
-                        <div class="row-table_token color-blue table__token-nametoken">Token</div>
-                        <div class="row-table_token color-blue table__token-type">Type</div>
-                        <div class="row-table_token color-blue table__token-service">Service</div>
-                        <div class="row-table_token color-blue table__token-time">Time</div>
-                        <div class="row-table_token color-blue table__token-dataget">Date Get</div>
-                        <div class="row-table_token color-blue table__token-edit">Edit</div>
+            <div class="warp">
+                <p class="table_title">Bảng quản lý Token</p>
+                <div class="table">
+                    <div class="table_row row-header">
+                        <div class="row row-id">ID</div>
+                        <div class="row row-name">Name</div>
+                        <div class="row row-type">Type</div>
+                        <div class="row row-service">Service</div>
+                        <div class="row row-time">Time</div>
+                        <div class="row row-dateGet">Date Get</div>
+                        <div class="row row-edit row-3">Edit</div>
                     </div>
                     <?php 
                     $sql = "SELECT * FROM token LIMIT $start, $limit";
                     $query = mysqli_query($conn, $sql);
                     while ($row = mysqli_fetch_array($query)) { ?>
-                    <div class="table__token-list <?php echo checkBlocked($conn, $row) ?>">
-                        <div class="row-table_token table__token-id"><?php echo $row['id'] ?></div>
-                        <div class="row-table_token table__token-nametoken"><?php echo $row['name'] ?></div>
-                        <div class="row-table_token table__token-type"><?php echo $row['type'] ?></div>
-                        <div class="row-table_token table__token-service <?php echo checkService($conn, $row) ?>"><?php echo $row['service'] ?></div>
-                        <div class="row-table_token table__token-time"><?php echo $row['time'] ?> Tháng</div>
-                        <div class="row-table_token table__token-dataget"><?php echo $row['time_created'] ?></div>
-                        <div class="row-table_token table__token-edit">
-                            <span href="token-edit.php?id=<?php echo $row['id'] ?>">
-                                <i class="table__token-icon green fas fa-edit js-ET"></i>
+                    <div class="table_row <?php echo checkBlocked($conn, $row) ?>">
+                        <div class="row row-id"><?php echo $row['id'] ?></div>
+                        <div class="row row-name"><?php echo $row['name'] ?></div>
+                        <div class="row row-type"><?php echo $row['type'] ?></div>
+                        <div class="row row-service <?php echo checkService($conn, $row) ?>"><?php echo $row['service'] ?></div>
+                        <div class="row row-time"><?php echo $row['time'] ?> Tháng</div>
+                        <div class="row row-dateGet"><?php echo $row['time_created'] ?></div>
+                        <div class="row row-edit row-3">
+                            <span href="token-edit.php?id=<?php echo $row['id'] ?>" class="js-edit row-edit-icon green">
+                                <i class="fas fa-edit"></i>
                             </span>
-                            <!-- <a href="token-delete.php?id=<?php echo $row['id'] ?>">
-                                <i class="table__token-icon blue fas fa-lock"></i>
-                                <i class="table__token-icon blue fas fa-lock-open none"></i>
-                            </a> -->
-                            <a href="token-<?php echo urlBlock($conn, $row).'.php?id='.$row['id'] ?>">
+                            <a href="token-<?php echo urlBlock($conn, $row).'.php?id='.$row['id'] ?>" class="row-edit-icon orange">
                                 <?php echo IconBlock($conn, $row) ?>
                             </a>
-                            <a href="token-delete.php?id=<?php echo $row['id'] ?>">
-                                <i class="table__token-icon red fas fa-trash-alt"></i>
+                            <a href="token-delete.php?id=<?php echo $row['id'] ?>" class="row-edit-icon red">
+                                <i class="fas fa-trash-alt"></i>
                             </a>
                         </div>
                     </div>
                     <?php } ?>
                 </div>
-            </div>
-            <div class="pagination">
-                <?php 
-                for($i = 1; $i <= $total_page; $i++) {
-                    if($i == $current_page) {
-                        echo "<a class='num-page active'>" . $i . "</a>";
-                    } else {
-                        echo "<a class='num-page' href='manage-token.php?page=". $i ."'>" . $i . "</a>";
+                <div class="pagination">
+                    <?php
+                    for($i = 1; $i <= $total_page; $i++) {
+                        if($i == $current_page) {
+                            echo "<a class='active'>" . $i . "</a>";
+                        } else {
+                            echo "<a href='manage-token.php?page=". $i ."'>" . $i . "</a>";
+                        }
                     }
-                }    
-                ?>
+                    ?>
+                </div>
             </div>
-        </div>
-        
-        <!-- Modal edit page manage-token -->
-        <!-- modaET:  dành cho moda Edit Token -->
-        <div class="modaET js-modaET">
-            <div class="modaET-container js-modaET-container">
-                <div class="modaET__close js-modaET-close">
-                    <ion-icon name="close-outline"></ion-icon>
-                </div>
-                <div class="modaET__hd bold-6">
-                    Chỉnh sửa Token
-                </div>
-                <div class="modaET__body bold-5">
-                    <form action="token-edit.php" method="POST">
-                        <div class="flex-center modaET__body-username">
-                            <div class="modaET__body-left">ID: </div>
-                            <div class="modaET__body-right output-id"></div>
-                        </div>
-                        <div class="flex-center modaET__body-username">
-                            <div class="modaET__body-left">Token: </div>
-                            <div class="modaET__body-right output-name"></div>
-                        </div>
-                        <div class="flex-center modaET__body-username">
-                            <div class="modaET__body-left">Type: </div>
-                            <select name="type" class="modaET__body-right p-5">
-                                <option value="HD">HD</option>
-                                <option value="4K">4K</option>
-                            </select>
-                        </div>
-                        <div class="flex-center modaET__body-username">
-                            <div class="modaET__body-left">Service: </div>
-                            <select name="service" class="modaET__body-right p-5">
-                                <option value="Netflix">Netflix</option>
-                                <option value="Disney">Disney</option>
-                            </select>
-                        </div>
-                        <div class="flex-center modaET__body-username">
-                            <div class="modaET__body-left">Time: </div>
-                            <select name="time" class="modaET__body-right p-5">
+
+            <!-- Modal edit -->
+            <div class="modal-box box-edit">
+                <div class="modal-overlay overlay-edit"></div>
+                <div class="modal-warp">
+                    <div class="modal-headding">
+                        <p class="modal-headding-title">Chỉnh sửa Token</p>
+                        <i class="modal-close edit-close fas fa-times"></i>
+                    </div>
+                    <div class="modal-body">
+                        <form action="token-edit.php?id=" method="POST">
+                            <div class="body-row">
+                                <p class="body-content">ID: </p>
+                                <span class="output-id" name="id"></span>
+                            </div>
+                            <div class="body-row">
+                                <p class="body-content">Name: </p>
+                                <span class="output-name" name="name-token"></span>
+                                <!-- <input class="body-input" name="name" type="text"> -->
+                            </div>
+                            <div class="body-row">
+                                <p class="body-content">Type: </p>
+                                <select class="select-row" name="type">
+                                    <option value="HD">HD</option>
+                                    <option value="4K">4K</option>
+                                </select>
+                            </div>
+                            <div class="body-row">
+                                <p class="body-content">Service: </p>
+                                <select class="select-row" name="service">
+                                    <option value="Netflix">Netflix</option>
+                                    <option value="Disney">Disney</option>
+                                </select>
+                            </div>
+                            <div class="body-row">
+                                <p class="body-content">Time: </p>
+                                <select class="select-row" name="time">
                                     <option value="1 Tháng">1 Tháng</option>
                                     <option value="3 Tháng">3 Tháng</option>
                                     <option value="6 Tháng">6 Tháng</option>
                                     <option value="12 Tháng">12 Tháng</option>
-                            </select>
-                        </div>
-                        <div class="flex-center modaET__body-username">
-                            <div class="modaET__body-left">Data Get: </div>
-                            <input type="datetime-local" name="time_created" class="modaET__body-right p-5">
-                        </div>
-                        <button class="ET-confirm bold-6" name="btn_edit">
-                            Cập nhật
-                        </button>
-                    </form>
+                                </select>
+                            </div>
+                            <div class="body-row">
+                                <p class="body-content">Date get: </p>
+                                <input class="body-input" name="time_created" type="datetime-local" value="">
+                            </div>
+                            <div class="body-row">
+                                <button class="btn" name="btn_edit">Cập nhật</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-        <script src="./style/js/modaET.js"></script>
 
-        <script src="./style/js/js-token.js"></script>
+        <script>
+            // Xử lý modal Edit
+            const clickEdit = document.querySelectorAll('.row .js-edit');
+            const showEdit = document.querySelector('.box-edit');
+            const clickEditClose1 = document.querySelector('.edit-close');
+            const clickEditClose2 = document.querySelector('.overlay-edit');
+            function openModalEdit() {
+                showEdit.classList.add('open');
+            }
+            function closeModalEdit() {
+                showEdit.classList.remove('open');
+            }
+            for(var i of clickEdit) {
+                i.addEventListener('click', openModalEdit);
+            }
+            clickEditClose1.addEventListener('click', closeModalEdit);
+            clickEditClose2.addEventListener('click', closeModalEdit);
+        </script>
+        <script src="style/js-token.js"></script>
 
 <?php include('includes/footer.php') ?>
