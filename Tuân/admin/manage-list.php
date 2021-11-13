@@ -159,7 +159,7 @@ function urlBlock($data) {
                             <?php showDate($conn, $data) ?>
                         </div>
                         <div class="row-table_list table__list-edit">
-                            <span href="token-edit.php?id=<?php echo $data['id'] ?>" class="js-ID">
+                            <span class="js-ID">
                                 <i class="table__list-icon gray far fa-id-card"></i>
                             </span>
                             <a href="list-<?php echo urlBlock($data).'.php?id='.$data['id_token'] ?>">

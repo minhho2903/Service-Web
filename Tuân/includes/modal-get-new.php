@@ -21,9 +21,6 @@
                         <span class="mail">Mật khẩu: </span>
                         <span class="inf-mail bold-6">654789</span>
                     </div>
-                    <!-- <button class="modaGA-sign">
-                        Bảo hành
-                    </button> -->
                 </div>
             </div>
         </div>

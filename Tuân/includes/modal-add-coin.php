@@ -1,4 +1,22 @@
         <?php require_once('connection.php') ?>
+        <?php 
+        // $id = $_SESSION['user_id'];
+        // $sql = "SELECT * FROM user WHERE id = $id";
+        // $query = mysqli_query($conn, $sql);
+        
+        if(isset($_POST['btn_add'])) {
+            $coin = $_SESSION['coin'];
+            $username = $_POST['username'];
+            $add_coin = $_POST['recharge'] + $coin;
+            $sql = "UPDATE user SET coin = $add_coin WHERE id = $id AND username = '$username'";
+            mysqli_query($conn, $sql);
+            $_SESSION['coin'] = $add_coin;
+            echo "<script>alert('Bạn đã nạp tiền thành công, mua thả ga đi nhé ^^')</script>";
+            echo "<meta http-equiv=\"refresh\" content=\"0;URL=index.php\">";
+
+            
+        }
+        ?>
         <!-- Modal Nạp tiền -->
         <!-- modaRC:  dành cho moda Recharge (nạp tiền)-->
         <div class="modaRC js-modaRC">
@@ -14,7 +32,7 @@
                     <form action="index.php" method="POST">
                         <div class="flex-center modaRC__body-id">
                             <div class="modaRC__body-admin-left">Username: </div>
-                            <input type="text" name="" id="" class="modaRC__body-admin-right padding-5" placeholder="abc123">
+                            <input type="text" name="username" class="modaRC__body-admin-right padding-5" placeholder="abc123">
                         </div>
                         <div class="flex-center modaRC__body-username">
                             <div class="modaRC__body-admin-left">Nạp thêm: </div>
@@ -47,17 +65,3 @@
         <?php } ?>
         </div>
         <script src="./style/js/modaRC.js"></script>
-
-<?php 
-
-    if(isset($_POST['btn_add'])) {
-        $id = $_SESSION['user_id'];
-        $coin = $_SESSION['coin'];
-        $add_coin = $_POST['recharge'] + $coin;
-        $sql = "UPDATE user SET coin = $add_coin WHERE id = $id";
-        mysqli_query($conn, $sql);
-        $_SESSION['coin'] = $add_coin;
-        echo "<script>alert('Bạn đã nạp tiền thành công, mua thả ga đi nhé ^^')</script>";
-        echo "<meta http-equiv=\"refresh\" content=\"0;URL=index.php\">";
-    }
-?>

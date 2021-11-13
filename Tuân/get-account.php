@@ -8,29 +8,32 @@
                 <div class="row pt-20">
                     <div class="col l-5 token-form">
                         <div class="col l-9 l-o-2 token-form__container">
-                            <input type="text" class="token-input" name="" id="" placeholder="Nhập token ở đây!">
-                            <div class="token-check">
-                                <input type="checkbox" name="token-check" value="get-inf" id="checkbox1" style="width: 18px; height: 18px;">
-                                <label for="checkbox1" class="bold-6">Tôi đã đọc kỹ hướng dẫn</label>
-                            </div>
-                            <div class="token-check">
-                                <input type="checkbox" name="token-check" value="get-new" id="checkbox2" style="width: 18px; height: 18px;">
-                                <label for="checkbox2" class="bold-6">Tôi xác nhận tài khoản đã bị hỏng, tôi muốn bảo hành</label>
-                            </div>
-                            <div class="btn-get-acc-container">
-                                <div class="btn-get-acc">
-                                    <button class="get-acc bold-6 js-getacc">Nhận tài khoản</button>
+                            <form id="form_input">  
+                                <input type="text" class="token-input" name="nameToken" placeholder="Nhập token ở đây!">
+                                <div class="token-check">
+                                    <input type="checkbox" name="get-inf" value="check1" id="check1" style="width: 18px; height: 18px;">
+                                    <label for="check1" class="bold-6">Tôi đã đọc kỹ hướng dẫn</label>
                                 </div>
-                                <div class="btn-get-acc">
-                                    <button class="get-acc bold-6 js-warranty">Bảo hành</button>
+                                <div class="token-check">
+                                    <input type="checkbox" name="get-new" value="check2" id="check2" style="width: 18px; height: 18px;">
+                                    <label for="check2" class="bold-6">Tôi xác nhận tài khoản đã bị hỏng, tôi muốn bảo hành</label>
                                 </div>
-                            </div>
+                                <div class="btn-get-acc-container">
+                                    <div class="btn-get-acc">
+                                        <button class="get-acc bold-6 js-getacc btn_get">Nhận tài khoản</button>
+                                    </div>
+                                    <div class="btn-get-acc">
+                                        <button class="get-acc bold-6 js-warranty btn_getnew">Bảo hành</button>
+                                    </div>
+                                </div>
+                            </form>
                             <div class="link-gr bold-5">
                                 <a href="https://www.facebook.com/groups/kmphimgiare" target="_blank">Để được phục vụ tốt hơn, vui lòng tham gia cộng dồng của chúng tôi</a>
                             </div>
                         </div>
                         <div class="col l-1"></div>
                     </div>
+
                     <div class="col l-7 manual">
                         <div class="col l-11 manual__container">
                             <div class="manual__hd">
@@ -97,7 +100,14 @@
             </div>
         </div>
 
-        <?php include('./includes/modal-get-account.php') ?>
-        <?php include('./includes/modal-get-new.php') ?>
-
+        <!-- Modal Nhận tài khoản -->
+        <!-- modaGA: dành cho moda Get Account (nhận tài khoản) -->
+        <div id="modaGA-main"></div>
+        <script src="./style/js/get-ajax.js"></script>
+        
+        <!-- Modal Bảo hành -->
+        <!-- modaWA: dành cho moda Warranty (bảo hành) -->
+        <div id="modaGA-new"></div>
+        <script src="./style/js/getnew-ajax.js"></script>
+    
 <?php include('includes/footer.php') ?>
