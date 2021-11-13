@@ -54,9 +54,7 @@
 
             }
         }
+
         header("Location: manage-list.php");
-        
     }
-
-
 ?>

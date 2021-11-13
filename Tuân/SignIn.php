@@ -33,6 +33,7 @@ function checkLogin($conn) {
                     $_SESSION["username"] = $data["username"];
                     $_SESSION["fullname"] = $data["fullname"];
                     $_SESSION["email"] = $data["email"];
+                    $_SESSION["coin"] = $data["coin"];
                     $_SESSION["role"] = $data["role"];
                 }
     

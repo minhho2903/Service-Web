@@ -10,6 +10,10 @@
                 </div>
                 <div class="modaGA__body">
                     <div class="inf-acc">
+                        <span class="mail">Gói: </span>
+                        <span class="inf-mail italic bold-6">Netflix Premium - 1 tháng</span>
+                    </div>
+                    <div class="inf-acc">
                         <span class="mail">Tài khoản: </span>
                         <span class="inf-mail bold-6">hoductheminh339@gmail.com</span>
                     </div>
@@ -17,9 +21,6 @@
                         <span class="mail">Mật khẩu: </span>
                         <span class="inf-mail bold-6">123456</span>
                     </div>
-                    <button class="modaGA-sign">
-                        Bảo hành
-                    </button>
                 </div>
             </div>
         </div>

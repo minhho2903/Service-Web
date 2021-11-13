@@ -25,6 +25,10 @@
                         <div class="modaDT__body-left">Mail</div>
                         <div class="modaDT__body-right"><?php echo $_SESSION['email'] ?></div>
                     </div>
+                    <div class="flex-center modaDT__body-coin">
+                        <div class="modaDT__body-left">Coin</div>
+                        <div class="modaDT__body-right"><?php echo $_SESSION['coin'] ?></div>
+                    </div>
                     <div class="flex-center modaDT__body-role">
                         <div class="modaDT__body-left">Role</div>
                         <div class="modaDT__body-right"><?php echo checkRole() ?></div>

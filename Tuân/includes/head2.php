@@ -8,7 +8,7 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="./style/css/grid.css">
     <link rel="stylesheet" href="./style/css/main.css">
-    <link rel="stylesheet" href="./style/css/modaSP_GA-fixed.css">
+    <link rel="stylesheet" href="./style/css/modaSP_GA_WA-fixed.css">
     <link rel="stylesheet" href="./style/fonts/themify-icons-font/themify-icons/themify-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

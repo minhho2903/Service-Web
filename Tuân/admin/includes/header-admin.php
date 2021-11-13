@@ -1,62 +1,68 @@
 <?php require_once('includes/connection.php') ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services</title>
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="./style/css/grid.css">
+    <link rel="stylesheet" href="./style/css/main.css">
+    <link rel="stylesheet" href="./style/css/modaSP_GA-fixed.css">
+    <link rel="stylesheet" href="./style/fonts/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <title>Service Web</title>
 </head>
 <body>
-    <header>
-        <div class="header">
-            <div class="header-left">
-                <ul class="list">
-                    <li class="item">
-                        <i>Logo</i>
-                    </li>
-                    <li class="item">
-                        <a href="../index.php" class="item-link">Trang chủ</a>
-                    </li>
-                    <li class="item">
-                        <a href="get-token.php" class="item-link">Get Token</a>
-                    </li>
-                    <li class="item">
-                        <!-- <a href="#!" class="item-link">Manage</a> -->
-                        <a class="item-link">Manage</a>
-                        <div class="item_menu">
-                            <a href="manage-user.php" class="item_menu-link">User</a>
-                            <a href="manage-token.php" class="item_menu-link">Token</a>
-                            <a href="manage-acc-net.php" class="item_menu-link">Account</a>
-                            <a href="manage-list.php" class="item_menu-link">List</a>
-                        </div>
-                    </li>
-                    <!-- <li class="item">
-                        <a href="#!" class="item-link">Manage User</a>
-                    </li> -->
-                </ul>
-            </div>
-
-            <div class="header-right">
-                <ul class="list">
-                    <li class="item">
-                        <p class="item-name"><?php echo $_SESSION['fullname'] ?></p>
-                    </li>
-                    <li class="item">
-                        <i class="item-icon fas fa-bars"></i>
-                        <div class=item_nav>
-                            <a href="../info-login.php" class="item_nav-link">Thông tin chi tiết</a>
-                            <a href="../logout.php" class="item_nav-link">Đăng xuất</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>            
-
-        </div>
-    </header>
-
     <div class="main">
-        
+        <!-- Header -->
+        <div id="header">
+            <div class="grid">
+                <div class="hd__nav">
+                    <div class="header-guest">
+                    <ul class="hd__nav-list">
+                            <li class="hd__nav-item">
+                                <a href="#" class="hd__nav-item-link">
+                                    <ion-icon name="diamond-sharp"></ion-icon>
+                                </a>
+                            </li>
+                            <li class="hd__nav-item"><a href="../index.php">Trang chủ</a></li>
+                            <li class="hd__nav-item"><a href="get-token.php">Get Token</a></li>
+                            <li class="hd__nav-item account">
+                                <a href="#">
+                                    Quản lý
+                                </a>
+                                <ul class="subnav-admin">
+                                    <li><a href="manage-user.php">Người dùng</a></li>
+                                    <li><a href="manage-token.php">Token</a></li>
+                                    <li><a href="manage-account-net.php">Tài khoản</a></li>
+                                    <li><a href="manage-list.php">Danh sách</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="hd__nav-list">
+                            <li class="hd__nav-item none">
+                                <a href="#" class="hd__nav-item-link">
+                                    <ion-icon name="diamond-sharp"></ion-icon>
+                                </a>
+                            </li>
+                            <li class="account">
+                                <a class="flex-center" href="#">
+                                    <?php echo $_SESSION["fullname"] ?>
+                                    <ion-icon class="profile-icon" name="person-circle-outline"></ion-icon>
+                                </a>
+                                <ul class="subnav">
+                                    <li class="js-details"><a href="#">Thông tin chi tiết</a></li>
+                                    <li><a href="../logout.php">Đăng xuất</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>

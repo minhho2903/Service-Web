@@ -310,3 +310,88 @@ html {
     }
 }
 
+/* Modal bảo hành */
+.modaWA.open {
+    display: flex;
+}
+
+.modaWA {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+}
+
+.modaWA-container {
+    background-color: #fff;
+    width: 400px;
+    max-width: calc(100% - 32px);
+    min-height: 100px;
+    position: relative;
+    animation: modalFadeInGA ease 1s;
+    /* margin-top: 50px; */
+    border-radius: 25px;
+}
+
+.modaWA__close {
+    position: absolute;
+    right: 6px;
+    top: 2px;
+    padding: 2px;
+    color: #fff;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.modaWA__close:hover {
+    /* opacity: 1; */
+    color: #000;
+}
+
+.modaWA__close ion-icon {
+    font-size: 25px;
+}
+
+.modaWA__hd {
+    background-color: #F0A500;
+    padding: 10px 25px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 25px 25px 0 0;
+}
+
+.modaWA__body {
+    padding: 10px;
+}
+
+.inf-acc {
+    font-size: 18px;
+    padding: 7px;
+}
+
+.inf-acc .mail {
+    opacity: 0.8;
+}
+
+.modaWA-sign {
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    background-color: #E45826;
+    padding: 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.modaWA-sign:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}

@@ -8,16 +8,17 @@ if(isset($_POST['btn_edit'])) {
     $password = $_POST['password'];
     $fullname = $_POST['fullname'];
     $email = $_POST['email'];
+    $coin = $_POST['coin'];
     $role = ($_POST['role'] == "Admin") ? 
     2 : (($_POST['role'] == "Nhân viên") ? 
     1 : 0);
-    echo "Role: " . $role;
 
     $sql = "UPDATE user
             SET username = '$username', 
                 password = '$password', 
                 fullname = '$fullname', 
                 email = '$email', 
+                coin = '$coin', 
                 role = '$role' 
             WHERE id = $id";
     mysqli_query($conn, $sql);

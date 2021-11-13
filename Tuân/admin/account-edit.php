@@ -7,7 +7,7 @@ if(isset($_POST['btn_edit-net'])) {
     $mail = $_POST['mail'];
     $pass = $_POST['pass'];
     $type = $_POST['type'];
-    
+    echo "ID:" . $id;
     $sql = "UPDATE account_netflix
             SET mail = '$mail', 
                 pass = '$pass', 
@@ -15,7 +15,7 @@ if(isset($_POST['btn_edit-net'])) {
             WHERE id = $id";
     mysqli_query($conn, $sql);
     
-    header("Location: manage-acc-net.php");
+    header("Location: manage-account-net.php");
 }
 
 if(isset($_POST['btn_edit-dn'])) {
@@ -31,7 +31,7 @@ if(isset($_POST['btn_edit-dn'])) {
                 WHERE id = $id";
         mysqli_query($conn, $sql);
 
-        header("Location: manage-acc-dn.php");
+        header("Location: manage-account-dn.php");
     }
 
 ?>

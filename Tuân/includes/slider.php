@@ -4,7 +4,7 @@
                 <div class="col-1 px-0"> 
                 </div>
                 <div class="col-10 px-0">
-                    <div id="demo" class="carousel slide" data-ride="carousel" data-interval="2000">
+                    <div id="demo" class="carousel slide" data-ride="carousel" data-interval="3000">
         
                         <!-- Indicators -->
                         <ul class="carousel-indicators">
@@ -16,13 +16,13 @@
                         <!-- The slideshow -->
                         <div class="carousel-inner border-slide">
                             <div class="carousel-item active">
-                                <img src="./style/img/DP.jpg" width="100%" alt="img1">
+                                <img src="./style/img/slide Netflix.png" width="100%" alt="img1">
                             </div>
                             <div class="carousel-item">
-                                <img src="./style/img/MoneyHeist.jpg" width="100%" alt="img2">
+                                <img src="./style/img/slide Disney+.png" width="100%" alt="img2">
                             </div>
                             <div class="carousel-item">
-                                <img src="./style/img/SAS.jpg" width="100%" alt="img3">
+                                <img src="./style/img/slide 3.png" width="100%" alt="img3">
                             </div>
                         </div>
         
