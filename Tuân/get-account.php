@@ -45,7 +45,7 @@
                                 <div class="manual__body-list">
                                     <div class="manual__body-item">
                                         <i class="ti-hand-point-right"></i>
-                                        <span>Mua token tại fanpage: fb.com/kmphimgiare</span>
+                                        <span class="effect-text">Mua token tại fanpage: fb.com/kmphimgiare</span>
                                     </div>
                                     <div class="manual__body-item">
                                         <i class="ti-hand-point-right"></i>

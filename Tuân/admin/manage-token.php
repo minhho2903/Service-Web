@@ -8,7 +8,7 @@
     $total_records = $row['total'];
 
     $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
-    $limit = 12;
+    $limit = 10;
 
     $total_page = ceil($total_records / $limit);
 

@@ -1407,6 +1407,27 @@ p.modal-alert {
     color: #9C19E0;
 }
 
+#content .effect-text {
+    color: #fff;
+    font-size: 19px;
+    text-transform: uppercase;
+    background: linear-gradient(to right,#095fab 10%, #25abe8 50%, #57d75b 60%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 3.5s linear infinite;
+}
+
+@keyframes textclip {
+    to {
+      background-position: 200% center;
+    }
+}
+
 #content .ti-hand-point-right {
     color: #FF5151;
 }
