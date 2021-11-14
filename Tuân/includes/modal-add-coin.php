@@ -28,6 +28,11 @@
                         <div class="flex-center modaRC__body-username">
                             <div class="modaRC__body-admin-left">Nạp thêm: </div>
                             <input type="number" min="10" max="1000" name="recharge" class="modaRC__body-admin-right padding-5" value="10">
+                            <i class="money-icon fa fa-coins" style="color:#f7da40;"></i>
+                        </div>
+                        <div class="change-coin">
+                            1 <i class="money-icon fa fa-coins" style="color:#f7da40;"></i>
+                            = 1000 VNĐ
                         </div>
                         <div class="message"></div>
                         <button name="btn_add" class="RC-confirm bold-6 btn_add">
@@ -52,6 +57,10 @@
                         <div class="modaRC__body-guest-right"><?php echo $data_acc['coin'] ?>
                             <i class="money-icon fa fa-coins" style="color:#f7da40;"></i>
                         </div>
+                    </div>
+                    <div class="change-coin">
+                        1 <i class="money-icon fa fa-coins" style="color:#f7da40;"></i>
+                        = 1000 VNĐ
                     </div>
                     <a href="https://www.facebook.com/kmphimgiare.support" target="_blank" class="modaRC__body-contact">Liên hệ với Page để được nạp thêm tiền</a>
                 </div>

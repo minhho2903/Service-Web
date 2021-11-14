@@ -20,7 +20,10 @@
         echo "<script>alert('Token đã bị khóa')</script>";
     } elseif (checkTime($data_token) == 1) {
         echo "<script>alert('Token đã hết hạn, mời bạn mua token khác')</script>";
-    } else {
+    } elseif (checkTimeGet($data_token) == 1) {
+        echo "<script>alert('Bạn vừa lấy token xong, mời bạn quay lại sau 5 phút')</script>";
+    }
+    else {
         $idToken = $data_token['id'];
         $service = strtolower($data_token['service']);
         $idService = "id_" . $service;
@@ -86,14 +89,30 @@
 <?php 
 function checkTime($data) {
     $check = 0;
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
     $timeGet = new DateTime($data['time_created']);
     $timeCurr = new DateTime(date('Y-m-d H:i:s'));
     $timeCal = date_diff($timeGet, $timeCurr);
     $expTime = $timeCal->format('%m');
     $timeToken = $data['time'];
-    // Kiểm tra thời gian của gói token nếu 
+    // Kiểm tra thời gian của gói token
     if($timeToken <= $expTime) {
         $check = 1;
+    }
+    return $check;
+}
+
+function checkTimeGet($data) {
+    $check = 1;
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
+    $timeGet = new DateTime($data['time_update']);
+    $timeCurr = new DateTime(date('Y-m-d H:i:s'));
+    $timeCal = date_diff($timeGet, $timeCurr);
+    $expTime = $timeCal->format('%i');
+    $timeToken = 5;
+    // Kiểm tra thời gian của token vừa lấy đủ 5p chưa
+    if($timeToken <= $expTime) {
+        $check = 0;
     }
     return $check;
 }

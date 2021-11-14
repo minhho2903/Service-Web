@@ -1,7 +1,59 @@
 <?php include('includes/head2.php') ?>
 <?php include('includes/header.php') ?>
 <?php require_once('includes/connection.php') ?>
+<?php include('includes/role0.php') ?>
+<?php 
 
+$idUser = $_SESSION['user_id'];
+
+//Phân trang
+$sql1 = "SELECT COUNT(id_token) AS total FROM manage_user WHERE id = $idUser";
+$query = mysqli_query($conn, $sql1);
+$row = mysqli_fetch_array($query);
+$total_records = $row['total'];
+
+$current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+$limit = 10;
+
+$total_page = ceil($total_records / $limit);
+
+if ($current_page > $total_page) {
+    $current_page = $total_page;
+} else if ($current_page < 1) {
+    $current_page = 1;
+}
+
+$start = ($current_page - 1) * $limit;
+
+//Lấy thông tin
+$sql = "SELECT name, type, service, time, time_created, blocked
+        FROM manage_user
+            INNER JOIN user ON manage_user.id_user = user.id
+            INNER JOIN token ON manage_user.id_token = token.id
+        WHERE user.id = $idUser
+        LIMIT $start, $limit";
+$query = mysqli_query($conn, $sql);
+
+//Hàm xử lý màu
+function checkService($data) {
+    $colorCheck = "";
+    if ($data['service'] == 'Netflix') {
+        $colorCheck = "Netflix";
+    }
+    if ($data['service'] == 'Disney') {
+        $colorCheck = "Disney";
+    }
+    return $colorCheck;
+}
+
+function checkBlocked($data) {
+    $colorBlock = "";
+    if ($data['blocked'] == 1) {
+        $colorBlock = 'color-block';
+    }
+    return $colorBlock;
+}
+?>
         <!-- Content -->
         <div id="content">
             <div class="grid wide-1000 table__token-container">
@@ -18,36 +70,29 @@
                         <div class="row-table_token color-blue table__token-time">Time</div>
                         <div class="row-table_token color-blue table__token-dataget">Date Get</div>
                     </div>
-                    <div class="table__token-list color-block">
-                        <div class="row-table_token table__token-id">1</div>
-                        <div class="row-table_token table__token-nametoken">m9agaAQjjT</div>
-                        <div class="row-table_token table__token-type">4K</div>
-                        <div class="row-table_token table__token-service Netflix">Netflix</div>
-                        <div class="row-table_token table__token-time">12 tháng</div>
-                        <div class="row-table_token table__token-dataget">01-5-2021 12:23:01</div>
+                    <?php $i = 1; 
+                    while($data = mysqli_fetch_array($query)) { ?>
+                    <div class="table__token-list <?php echo checkBlocked($data) ?>">
+                        <div class="row-table_token table__token-id"><?php echo $i ?></div>
+                        <div class="row-table_token table__token-nametoken"><?php echo $data['name'] ?></div>
+                        <div class="row-table_token table__token-type"><?php echo $data['type'] ?></div>
+                        <div class="row-table_token table__token-service <?php echo checkService($data) ?>"><?php echo $data['service'] ?></div>
+                        <div class="row-table_token table__token-time"><?php echo $data['time'] ?> Tháng</div>
+                        <div class="row-table_token table__token-dataget"><?php echo $data['time_created'] ?></div>
                     </div>
-                    <div class="table__token-list">
-                        <div class="row-table_token table__token-id">2</div>
-                        <div class="row-table_token table__token-nametoken">34jhAFqmk5</div>
-                        <div class="row-table_token table__token-type">HD</div>
-                        <div class="row-table_token table__token-service Disney">Disney</div>
-                        <div class="row-table_token table__token-time">3 tháng</div>
-                        <div class="row-table_token table__token-dataget">16-4-2021 04:11:34</div>
-                    </div>
-                    <div class="table__token-list">
-                        <div class="row-table_token table__token-id">3</div>
-                        <div class="row-table_token table__token-nametoken">hg6TkqU123</div>
-                        <div class="row-table_token table__token-type">4K</div>
-                        <div class="row-table_token table__token-service Disney">Disney</div>
-                        <div class="row-table_token table__token-time">6 tháng</div>
-                        <div class="row-table_token table__token-dataget">27-3-2021 08:45:34</div>
-                    </div>
+                    <?php $i++; } ?>
                 </div>
             </div>
-            <div class="nums-page">
-                <a href="#" class="num-page"><div>1</div></a>
-                <a href="#" class="num-page"><div>2</div></a>
-                <a href="#" class="num-page"><div>3</div></a>
+            <div class="pagination">
+                <?php 
+                for($i = 1; $i <= $total_page; $i++) {
+                    if($i == $current_page) {
+                        echo "<a class='num-page active'>" . $i . "</a>";
+                    } else {
+                        echo "<a class='num-page' href='manage-token.php?page=". $i ."'>" . $i . "</a>";
+                    }
+                }    
+                ?>
             </div>
         </div>
 

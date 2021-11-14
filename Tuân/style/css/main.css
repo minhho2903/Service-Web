@@ -199,6 +199,19 @@ html {
     margin: 0 7px 0 7px;
 }
 
+.money-bg {
+    background-color: rgba(136, 121, 45, 0.7);
+    border-radius: 8px;
+    padding: 3px;
+}
+
+.change-coin {
+    padding: 12px;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-style: italic;
+}
+
 .profile-icon {
     font-size: 35px !important;
     color: #fff;
@@ -299,6 +312,7 @@ html {
     /* margin-top: 50px; */
     border-radius: 25px;
     display: flex;
+    overflow: hidden;
     /* justify-content: space-between; */
 }
 
@@ -1468,6 +1482,18 @@ p.modal-alert {
 #content .get-token-right {
     width: 35%;
     text-align: left;
+}
+
+#content .get-token-right2 {
+    flex: 1;
+    text-align: left;
+}
+
+#content .get-token-price {
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+    display: inline-block;
 }
 
 #content .btn-get-token {
