@@ -2,6 +2,7 @@
 <?php include('includes/header-admin.php') ?>
 <?php require_once('includes/connection.php') ?>
 <?php 
+    //Phân trang
     $sql2 = "SELECT COUNT(id) AS total FROM token";
     $query = mysqli_query($conn, $sql2);
     $row = mysqli_fetch_array($query);
@@ -20,6 +21,7 @@
 
     $start = ($current_page - 1) * $limit;
     
+    //Hàm check màu cho các loại khác nhau
     function checkService($conn, $data) {
         $colorCheck = "";
         if ($data['service'] == 'Netflix') {

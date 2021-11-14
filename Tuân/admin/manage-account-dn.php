@@ -3,6 +3,7 @@
 <?php include('includes/header-admin.php') ?>
 <?php require_once('includes/connection.php') ?>
 <?php 
+    //Phần trang
     $sql2 = "SELECT COUNT(id) AS total FROM account_disney";
     $query = mysqli_query($conn, $sql2);
     $row = mysqli_fetch_array($query);

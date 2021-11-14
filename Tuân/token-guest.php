@@ -2,8 +2,8 @@
 <?php include('includes/header.php') ?>
 <?php require_once('includes/connection.php') ?>
 <?php include('includes/role0.php') ?>
-<?php 
 
+<?php
 $idUser = $_SESSION['user_id'];
 
 //Phân trang
@@ -34,7 +34,7 @@ $sql = "SELECT name, type, service, time, time_created, blocked
         LIMIT $start, $limit";
 $query = mysqli_query($conn, $sql);
 
-//Hàm xử lý màu
+//Các hàm xử lý màu
 function checkService($data) {
     $colorCheck = "";
     if ($data['service'] == 'Netflix') {

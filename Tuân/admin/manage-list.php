@@ -30,6 +30,7 @@ $sql = "SELECT DISTINCT id_token, name, type, service, time, time_created, block
         LIMIT $start, $limit";
 $query = mysqli_query($conn, $sql);
 
+//Hàm hiện thị các tài khoản đã lấy của token tương ứng
 function showAccount($conn, $data, $string) {
     $idToken = "id_token";
     $account = $data[$idToken];
@@ -67,7 +68,7 @@ function showAccount($conn, $data, $string) {
         echo "<p class='rowshow'>" . $data3[$string] . "</p>";
     }
 }
-
+//Hàm hiển thị Date get của tài khoản tương ứng
 function showDate($conn, $data) {
     $idToken = "id_token";
     $account = $data[$idToken];
@@ -84,6 +85,7 @@ function showDate($conn, $data) {
     }
 }
 
+//Hàm check màu
 function checkService($data) {
     $colorCheck = "";
     if ($data['service'] == 'Netflix') {

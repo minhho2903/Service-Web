@@ -1,5 +1,6 @@
 <?php require_once('includes/connection.php') ?>
 <?php
+    //Lấy thông tin token
     $id = $_GET['id'];
     $sql = "SELECT * FROM token WHERE id = $id";
     $query = mysqli_query($conn, $sql);
@@ -9,6 +10,8 @@
     $tblService = "account_" . $typeService;
     $idService = "id_" . $typeService;
 
+    //Kiểm tra có ấn nút DELETE không
+    //Nếu có thì thực thi lệnh
     if(isset($_POST['btn_del'])) {
         if(isset($_POST['accountCheck'])) {
             $checkbox = $_POST['accountCheck'];

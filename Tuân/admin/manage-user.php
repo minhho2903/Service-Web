@@ -1,31 +1,48 @@
 <?php include('includes/role1.php') ?>
 <?php include('includes/header-admin.php') ?>
 <?php require_once('includes/connection.php') ?>
-<?php #include('includes/function.php') ?>
+
 <?php 
+//phân trang
+if($_SESSION['role'] == 1) {
+    $sql2 = "SELECT COUNT(id) AS total FROM user WHERE role = 0";
+} 
+if($_SESSION['role'] == 2) {
     $sql2 = "SELECT COUNT(id) AS total FROM user";
-    $query = mysqli_query($conn, $sql2);
-    $row = mysqli_fetch_array($query);
-    $total_records = $row['total'];
+}
+// $sql2 = "SELECT COUNT(id) AS total FROM user";
+$query = mysqli_query($conn, $sql2);
+$row = mysqli_fetch_array($query);
+$total_records = $row['total'];
 
-    $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
-    $limit = 10;
+$current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+$limit = 10;
 
-    $total_page = ceil($total_records / $limit);
+$total_page = ceil($total_records / $limit);
 
-    if ($current_page > $total_page) {
-        $current_page = $total_page;
-    } else if ($current_page < 1) {
-        $current_page = 1;
-    }
+if ($current_page > $total_page) {
+    $current_page = $total_page;
+} else if ($current_page < 1) {
+    $current_page = 1;
+}
 
-    $start = ($current_page - 1) * $limit;
+$start = ($current_page - 1) * $limit;
 
-    function checkRoleShow($data) {
-        return ($data['role'] == 2) ? 
-                "Admin" : (($data['role'] == 1) ? 
-                "Nhân viên" : "Khách");
-    }
+//Hàm check role để hiện thị ra bảng
+function checkRoleShow($data) {
+    return ($data['role'] == 2) ? 
+            "Admin" : (($data['role'] == 1) ? 
+            "Nhân viên" : "Khách");
+}
+
+if($_SESSION['role'] == 1) {
+    $sql = "SELECT * FROM user WHERE role = 0 LIMIT $start, $limit";
+    $query = mysqli_query($conn, $sql);
+}
+if($_SESSION['role'] == 2) {
+    $sql = "SELECT * FROM user LIMIT $start, $limit";
+    $query = mysqli_query($conn, $sql);
+}
 ?>
 
 
@@ -50,10 +67,7 @@
                         <div class="row-table_user color-blue table__user-role">Role</div>
                         <div class="row-table_user color-blue table__user-edit">Edit</div>
                     </div>
-                    <?php 
-                    $sql = "SELECT * FROM user LIMIT $start, $limit";
-                    $query = mysqli_query($conn, $sql);
-                    while ($row = mysqli_fetch_array($query)) { ?>
+                    <?php while ($row = mysqli_fetch_array($query)) { ?>
                     <div class="table__user-list">
                         <div class="row-table_user table__user-id"><?php echo $row['id'] ?></div>
                         <div class="row-table_user table__user-name"><?php echo $row['username'] ?></div>
@@ -119,6 +133,7 @@
                             <div class="modaEU__body-left">Email: </div>
                             <input type="text" name="email" class="modaEU__body-right p-5">
                         </div>
+                        <?php if($_SESSION['role'] == 2) { ?>
                         <div class="flex-center modaEU__body-username">
                             <div class="modaEU__body-left">Coin: </div>
                             <input type="text" name="coin" class="modaEU__body-right p-5">
@@ -131,6 +146,7 @@
                                 <option value="Khách">Khách</option>
                             </select>
                         </div>
+                        <?php } ?>
                         <button name="btn_edit" class="EU-confirm bold-6">
                             Cập nhật
                         </button>
@@ -168,16 +184,16 @@
                             <div class="modaAU__body-left">Email: </div>
                             <input type="text" name="email" class="modaAU__body-right p-5">
                         </div>
+                        <?php if($_SESSION['role'] == 2) { ?>
                         <div class="flex-center modaAU__body-username">
                             <div class="modaAU__body-left">Role: </div>
                             <select name="AU" class="modaAU__body-right p-5">
-                                <?php if($_SESSION['role'] == 2) { ?>
                                 <option value="2">Admin</option>
                                 <option value="1">Nhân viên</option>
-                                <?php } ?>
                                 <option value="0">Khách</option>
                             </select>
                         </div>
+                        <?php } ?>
                         <button class="AU-confirm bold-6" name="btn_add">
                             Thêm
                         </button>

@@ -1,5 +1,6 @@
 <?php require_once('includes/connection.php') ?>
 <?php
+    //Lấy thông tin của token
     $id = $_GET['id'];
     $sql = "SELECT * FROM token WHERE id = $id";
     $query = mysqli_query($conn, $sql);
@@ -8,7 +9,9 @@
     $typeService = strtolower($data['service']);
     $tblService = "account_" . $typeService;
     $idService = "id_" . $typeService;
-
+    
+    //Kiểm tra đã ấn nút REUSE
+    //Nếu có thì lấy thông tin và xử lý
     if(isset($_POST['btn_reuse'])) {
         if(isset($_POST['accountCheck'])) {
             $checkbox = $_POST['accountCheck'];

@@ -3,6 +3,7 @@
 <?php include('includes/header-admin.php') ?>
 <?php require_once('includes/connection.php') ?>
 <?php 
+    //Phân trang
     $sql2 = "SELECT COUNT(id) AS total FROM account_netflix";
     $query = mysqli_query($conn, $sql2);
     $row = mysqli_fetch_array($query);
