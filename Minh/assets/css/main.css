@@ -1318,6 +1318,7 @@ html {
     padding: 50px;
     /* background-image: linear-gradient(0, #00FECA, #FFD300 ); */
     background-image: linear-gradient(45deg, #FFE459, #F43B86, #3D087B, #11052C);
+    min-height: 100vh
 }
 
 .border-slide {
@@ -1476,6 +1477,7 @@ html {
 
 #content .effect-text {
     color: #fff;
+    font-size: 19px;
     text-transform: uppercase;
     background: linear-gradient(to right,#095fab 10%, #25abe8 50%, #57d75b 60%);
     background-size: auto auto;
