@@ -41,6 +41,7 @@
                                     <li><a href="manage-token.php">Token</a></li>
                                     <li><a href="manage-account-net.php">Tài khoản</a></li>
                                     <li><a href="manage-list.php">Danh sách</a></li>
+                                    <li><a href="manage-total.php">Doanh thu</a></li>
                                 </ul>
                             </li>
                         </ul>
