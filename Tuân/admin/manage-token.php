@@ -3,10 +3,10 @@
 <?php require_once('includes/connection.php') ?>
 <?php 
     //Phân trang
-    $sql2 = "SELECT COUNT(id) AS total FROM token";
-    $query = mysqli_query($conn, $sql2);
-    $row = mysqli_fetch_array($query);
-    $total_records = $row['total'];
+    $sql_page = "SELECT COUNT(id) AS total FROM token";
+    $query_page = mysqli_query($conn, $sql_page);
+    $row_page = mysqli_fetch_array($query_page);
+    $total_records = $row_page['total'];
 
     $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
     $limit = 10;
@@ -22,7 +22,7 @@
     $start = ($current_page - 1) * $limit;
     
     //Hàm check màu cho các loại khác nhau
-    function checkService($conn, $data) {
+    function checkService( $data) {
         $colorCheck = "";
         if ($data['service'] == 'Netflix') {
             $colorCheck = "Netflix";
@@ -33,7 +33,7 @@
         return $colorCheck;
     }
 
-    function checkBlocked($conn, $data) {
+    function checkBlocked( $data) {
         $colorBlock = "";
         if ($data['blocked'] == 1) {
             $colorBlock = 'color-block';
@@ -41,7 +41,7 @@
         return $colorBlock;
     }
 
-    function IconBlock($conn, $data) {
+    function IconBlock($data) {
         $iconBlock = '<i class="table__token-icon blue fas fa-lock"></i>';
         if ($data['blocked'] == 1) {
             $iconBlock = '<i class="table__token-icon blue fas fa-lock-open"></i>';
@@ -49,7 +49,7 @@
         return $iconBlock;
     }
 
-    function urlBlock($conn, $data) {
+    function urlBlock($data) {
         $urlBlock = 'block';
         if ($data['blocked'] == 1) {
             $urlBlock = 'unblock';
@@ -78,31 +78,31 @@
                     <?php 
                     $sql = "SELECT * FROM token LIMIT $start, $limit";
                     $query = mysqli_query($conn, $sql);
+                    $num_rows = mysqli_num_rows($query);
+                    if ($num_rows > 0) {
                     while ($row = mysqli_fetch_array($query)) { ?>
-                    <div class="table__token-list <?php echo checkBlocked($conn, $row) ?>">
+                    <div class="table__token-list <?php echo checkBlocked($row) ?>">
                         <div class="row-table_token table__token-id"><?php echo $row['id'] ?></div>
                         <div class="row-table_token table__token-nametoken"><?php echo $row['name'] ?></div>
                         <div class="row-table_token table__token-type"><?php echo $row['type'] ?></div>
-                        <div class="row-table_token table__token-service <?php echo checkService($conn, $row) ?>"><?php echo $row['service'] ?></div>
+                        <div class="row-table_token table__token-service <?php echo checkService($row) ?>"><?php echo $row['service'] ?></div>
                         <div class="row-table_token table__token-time"><?php echo $row['time'] ?> Tháng</div>
                         <div class="row-table_token table__token-dataget"><?php echo $row['time_created'] ?></div>
                         <div class="row-table_token table__token-edit">
                             <span href="token-edit.php?id=<?php echo $row['id'] ?>">
                                 <i class="table__token-icon green fas fa-edit js-ET"></i>
                             </span>
-                            <!-- <a href="token-delete.php?id=<?php echo $row['id'] ?>">
-                                <i class="table__token-icon blue fas fa-lock"></i>
-                                <i class="table__token-icon blue fas fa-lock-open none"></i>
-                            </a> -->
-                            <a href="token-<?php echo urlBlock($conn, $row).'.php?id='.$row['id'] ?>">
-                                <?php echo IconBlock($conn, $row) ?>
+                            <a href="token-<?php echo urlBlock($row).'.php?id='.$row['id'] ?>">
+                                <?php echo IconBlock($row) ?>
                             </a>
+                            <?php if($_SESSION['role'] == 2) { ?>
                             <a href="token-delete.php?id=<?php echo $row['id'] ?>">
                                 <i class="table__token-icon red fas fa-trash-alt"></i>
                             </a>
+                            <?php } ?>
                         </div>
                     </div>
-                    <?php } ?>
+                    <?php }} ?>
                 </div>
             </div>
             <div class="pagination">

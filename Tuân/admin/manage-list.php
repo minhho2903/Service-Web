@@ -167,10 +167,6 @@ function urlBlock($data) {
                             <a href="list-<?php echo urlBlock($data).'.php?id='.$data['id_token'] ?>">
                                 <?php echo IconBlock($data) ?>
                             </a>
-
-                            <!-- <i class="table__list-icon far fa-id-card js-ID" style="color: #2c2323"></i>
-                            <i class="table__list-icon fas fa-lock none" style="color: #4e0eff"></i>
-                            <i class="table__list-icon fas fa-lock-open" style="color: #4e0eff"></i> -->
                         </div>
                     </div>
                     <?php }} ?>

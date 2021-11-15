@@ -80,9 +80,11 @@ if($_SESSION['role'] == 2) {
                             <span href="user-edit.php?id=<?php echo $row['id'] ?>">
                                 <i class="table__user-icon green fas fa-edit js-EU"></i>
                             </span>
+                            <?php if($_SESSION['role'] == 2) { ?>
                             <a href="user-delete.php?id=<?php echo $row['id'] ?>">
                                 <i class="table__user-icon red fas fa-trash-alt"></i>
                             </a>
+                            <?php } ?>
                         </div>
                     </div>
                     <?php } ?>

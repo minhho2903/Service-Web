@@ -45,11 +45,15 @@
                                 <div class="manual__body-list">
                                     <div class="manual__body-item">
                                         <i class="ti-hand-point-right"></i>
-                                        <span class="effect-text">Mua token tại fanpage: fb.com/kmphimgiare</span>
+                                        <span class="effect-text">
+                                            <a href="https://www.facebook.com/kmphimgiare.support">
+                                                Nạp Coin tại fanpage: fb.com/kmphimgiare.support
+                                            </a>
+                                        </span>
                                     </div>
                                     <div class="manual__body-item">
                                         <i class="ti-hand-point-right"></i>
-                                        <span>Thanh toán và nhận token</span>
+                                        <span>Thanh toán và Mua token</span>
                                     </div>
                                     <div class="manual__body-item">
                                         <i class="ti-hand-point-right"></i>

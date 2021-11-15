@@ -2,6 +2,7 @@
 <?php require_once('./includes/connection.php') ?>
 
 <?php
+//Láy dữ liệu từ người dùng đã chọn
 $tokenType = $_POST['type'];
 $tokenService = $_POST['service'];
 $tokenTime = $_POST['time'];
@@ -20,26 +21,15 @@ function generate_string($input, $strength = 10) {
 
 $token = generate_string($permitted_chars);
 
-//Giá từng loại
-$priceToken = 0;
-//Netflix
-if($tokenService == 'Netflix' && $tokenType == 'HD' && $tokenTime == 1) {$priceToken = 35;}
-if($tokenService == 'Netflix' && $tokenType == 'HD' && $tokenTime == 3) {$priceToken = 75;}
-if($tokenService == 'Netflix' && $tokenType == 'HD' && $tokenTime == 6) {$priceToken = 140;}
-if($tokenService == 'Netflix' && $tokenType == 'HD' && $tokenTime == 12) {$priceToken = 260;}
-if($tokenService == 'Netflix' && $tokenType == '4K' && $tokenTime == 1) {$priceToken = 45;}
-if($tokenService == 'Netflix' && $tokenType == '4K' && $tokenTime == 3) {$priceToken = 120;}
-if($tokenService == 'Netflix' && $tokenType == '4K' && $tokenTime == 6) {$priceToken = 220;}
-if($tokenService == 'Netflix' && $tokenType == '4K' && $tokenTime == 12) {$priceToken = 400;}
-//Disney
-if($tokenService == 'Disney' && $tokenType == 'HD' && $tokenTime == 1) {$priceToken = 30;}
-if($tokenService == 'Disney' && $tokenType == 'HD' && $tokenTime == 3) {$priceToken = 70;}
-if($tokenService == 'Disney' && $tokenType == 'HD' && $tokenTime == 6) {$priceToken = 130;}
-if($tokenService == 'Disney' && $tokenType == 'HD' && $tokenTime == 12) {$priceToken = 220;}
-if($tokenService == 'Disney' && $tokenType == '4K' && $tokenTime == 1) {$priceToken = 35;}
-if($tokenService == 'Disney' && $tokenType == '4K' && $tokenTime == 3) {$priceToken = 95;}
-if($tokenService == 'Disney' && $tokenType == '4K' && $tokenTime == 6) {$priceToken = 170;}
-if($tokenService == 'Disney' && $tokenType == '4K' && $tokenTime == 12) {$priceToken = 300;}
+//Kiểm tra giá từng loại dịch vụ
+$sql_findPrice = "SELECT * 
+                FROM price_service
+                WHERE service = '$tokenService' 
+                    AND time = $tokenTime 
+                    AND type = '$tokenType'";
+$query_findPrice = mysqli_query($conn, $sql_findPrice);
+$data_findPrice = mysqli_fetch_array($query_findPrice);
+$priceToken = $data_findPrice['price'];
 
 //Kiểm tra coin mà user đang có
 $idUser = $_SESSION['user_id'];
@@ -51,7 +41,7 @@ $coinCur = $data_user['coin'];
 //Kiểm tra coin hiện tại của user có đủ để mua không
 if($coinCur >= $priceToken) {
     $sql = "INSERT INTO token(name, type, service, time, time_created)
-                    VALUES ('$token', '$tokenType', '$tokenService', '$tokenTime', now())";
+            VALUES ('$token', '$tokenType', '$tokenService', '$tokenTime', now())";
     mysqli_query($conn, $sql);
 
 

@@ -1,4 +1,4 @@
-<?php include('./admin/includes/role1.php') ?>
+<?php include('./includes/role1.php') ?>
 <?php require_once('./includes/connection.php') ?>
 <?php 
     $username = $_POST['username'];

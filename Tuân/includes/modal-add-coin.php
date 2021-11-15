@@ -27,7 +27,7 @@
                         </div>
                         <div class="flex-center modaRC__body-username">
                             <div class="modaRC__body-admin-left">Nạp thêm: </div>
-                            <input type="number" min="10" max="1000" name="recharge" class="modaRC__body-admin-right padding-5" value="10">
+                            <input type="number" min="10" max="1000" name="recharge" class="modaRC__body-admin-right padding-5 coin" value="10">
                             <i class="money-icon fa fa-coins" style="color:#f7da40;"></i>
                         </div>
                         <div class="change-coin">

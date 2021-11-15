@@ -16,7 +16,7 @@ $(document).ready(function()
         return false;
     }
 
-    if(addCoin == ''){
+    if(addCoin == '' || (addCoin < 10 || addCoin > 1000)){
         alert('Vui lòng nhập số XU cần nạp, 10 - 1000');
         return false;
     }
