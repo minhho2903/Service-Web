@@ -60,7 +60,9 @@ if($_SESSION['role'] == 2) {
                     <div class="table__user-list bold-6">
                         <div class="row-table_user color-blue table__user-id">ID</div>
                         <div class="row-table_user color-blue table__user-name">Username</div>
+                        <?php if($_SESSION['role'] == 2) { ?>
                         <div class="row-table_user color-blue table__user-pass">Password</div>
+                        <?php } ?>
                         <div class="row-table_user color-blue table__user-fname">Fullname</div>
                         <div class="row-table_user color-blue table__user-email">Email</div>
                         <div class="row-table_user color-blue table__user-coin">Coin</div>
@@ -71,7 +73,9 @@ if($_SESSION['role'] == 2) {
                     <div class="table__user-list">
                         <div class="row-table_user table__user-id"><?php echo $row['id'] ?></div>
                         <div class="row-table_user table__user-name"><?php echo $row['username'] ?></div>
+                        <?php if($_SESSION['role'] == 2) { ?>
                         <div class="row-table_user table__user-pass"><?php echo $row['password'] ?></div>
+                        <?php } ?>
                         <div class="row-table_user table__user-fname"><?php echo $row['fullname'] ?></div>
                         <div class="row-table_user table__user-email"><?php echo $row['email'] ?></div>
                         <div class="row-table_user table__user-coin"><?php echo $row['coin'] ?></div>
@@ -123,10 +127,12 @@ if($_SESSION['role'] == 2) {
                             <div class="modaEU__body-left">Username: </div>
                             <input type="text" name="username" class="modaEU__body-right p-5">
                         </div>
+                        <?php if($_SESSION['role'] == 2) { ?>
                         <div class="flex-center modaEU__body-username">
                             <div class="modaEU__body-left">Password: </div>
                             <input type="text" name="password" class="modaEU__body-right p-5">
                         </div>
+                        <?php } ?>
                         <div class="flex-center modaEU__body-username">
                             <div class="modaEU__body-left">Fullname: </div>
                             <input type="text" name="fullname" class="modaEU__body-right p-5">

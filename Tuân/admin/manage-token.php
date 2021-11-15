@@ -89,9 +89,11 @@
                         <div class="row-table_token table__token-time"><?php echo $row['time'] ?> Tháng</div>
                         <div class="row-table_token table__token-dataget"><?php echo $row['time_created'] ?></div>
                         <div class="row-table_token table__token-edit">
+                            <?php if($_SESSION['role'] == 2) { ?>
                             <span href="token-edit.php?id=<?php echo $row['id'] ?>">
                                 <i class="table__token-icon green fas fa-edit js-ET"></i>
                             </span>
+                            <?php } ?>
                             <a href="token-<?php echo urlBlock($row).'.php?id='.$row['id'] ?>">
                                 <?php echo IconBlock($row) ?>
                             </a>
